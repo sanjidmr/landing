@@ -1,873 +1,1276 @@
+<!DOCTYPE html>
+<html lang="bn">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+  <title>Derma House - Premium Korean Care</title>
 
-:root {
-  --rose: #c8426a;
-  --rose-light: #e8708f;
-  --rose-pale: #f9e8ef;
-  --rose-blush: #fdf3f6;
-  --gold: #c9a96e;
-  --gold-light: #e8d5b0;
-  --cream: #fefaf8;
-  --ivory: #fffbf9;
-  --charcoal: #2a1e26;
-  --muted: #7a5c6a;
-  --border: rgba(200,66,106,0.12);
-  --shadow-rose: 0 20px 60px rgba(200,66,106,0.18);
-  --shadow-soft: 0 8px 40px rgba(42,30,38,0.08);
-  --shadow-card: 0 4px 30px rgba(42,30,38,0.06);
-}
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Hind+Siliguri:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <style>
+    :root {
+      --rose: #c8426a;
+      --rose-light: #e8708f;
+      --rose-pale: #f9e8ef;
+      --rose-blush: #fdf3f6;
+      --gold: #c9a96e;
+      --gold-light: #e8d5b0;
+      --cream: #fefaf8;
+      --ivory: #fffbf9;
+      --charcoal: #2a1e26;
+      --muted: #7a5c6a;
+      --border: rgba(200, 66, 106, 0.12);
+      --shadow-rose: 0 20px 60px rgba(200, 66, 106, 0.18);
+      --shadow-soft: 0 8px 40px rgba(42, 30, 38, 0.08);
+      --shadow-card: 0 4px 30px rgba(42, 30, 38, 0.06);
+      --font-sans: 'Hind Siliguri', sans-serif;
+      --font-serif: 'Cormorant Garamond', serif;
+    }
 
-body {
-  font-family: 'Hind Siliguri', sans-serif;
-  background: var(--ivory);
-  color: var(--charcoal);
-  overflow-x: hidden;
-  line-height: 1.75;
-  -webkit-text-size-adjust: 100%;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.serif { font-family: 'Cormorant Garamond', Georgia, serif; }
-.container { max-width: 1080px; margin: 0 auto; padding: 0 18px; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--ivory);
+      color: var(--charcoal);
+      overflow-x: hidden;
+      line-height: 1.75;
+    }
 
-/* ── TOPBAR ── */
-.topbar {
-  background: linear-gradient(90deg, var(--rose) 0%, #a83258 50%, var(--rose) 100%);
-  background-size: 200% 100%;
-  animation: shimmer 3s linear infinite;
-  text-align: center;
-  padding: 9px 12px;
-  color: #fff;
-  font-size: 11.5px;
-  letter-spacing: 0.8px;
-  font-weight: 500;
-}
-@keyframes shimmer { 0%{background-position:0% 50%} 100%{background-position:200% 50%} }
+    .serif {
+      font-family: var(--font-serif);
+    }
 
-/* ══════════════════════
-   HERO — mobile-first
-══════════════════════ */
-.hero {
-  background: var(--ivory);
-  position: relative;
-  overflow: hidden;
-  padding: 32px 18px 0;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -100px; right: -100px;
-  width: 380px; height: 380px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #fce8ef 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: -50px;
-  width: 260px; height: 260px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #fdf3e3 0%, transparent 70%);
-  pointer-events: none;
-}
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
 
-/* Mobile: single column stack */
-.hero-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
+    /* ── TOPBAR ── */
+    .topbar {
+      background: linear-gradient(90deg, var(--rose) 0%, #a83258 50%, var(--rose) 100%);
+      background-size: 200% 100%;
+      animation: shimmer 3s linear infinite;
+      text-align: center;
+      padding: 9px 12px;
+      color: #fff;
+      font-size: 11.5px;
+      letter-spacing: 0.8px;
+      font-weight: 500;
+    }
 
-.hero-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(201,169,110,0.12);
-  border: 1px solid rgba(201,169,110,0.4);
-  color: #8a6520;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: 50px;
-  margin-bottom: 14px;
-}
-.hero-label::before { content: '🇰🇷'; font-size: 13px; }
+    @keyframes shimmer {
+      0% {
+        background-position: 0% 50%
+      }
 
-.hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(30px, 8.5vw, 56px);
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--charcoal);
-  margin-bottom: 12px;
-}
-.hero h1 em { font-style: italic; color: var(--rose); }
+      100% {
+        background-position: 200% 50%
+      }
+    }
 
-.hero-sub {
-  font-size: 14.5px;
-  color: var(--muted);
-  margin-bottom: 14px;
-  font-weight: 400;
-  line-height: 1.65;
-}
+    /* ── HERO ── */
+    .hero {
+      background: var(--ivory);
+      position: relative;
+      overflow: hidden;
+      padding: 32px 18px 0;
+    }
 
-.hero-badge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--rose-blush);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 11px 16px;
-  font-size: 13px;
-  color: var(--rose);
-  font-weight: 600;
-  width: 100%;
-}
-.hero-badge::before { content: '✦'; color: var(--gold); flex-shrink: 0; }
+    .hero-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
 
-/* MOBILE image — sits right below the badge */
-.hero-img-mobile {
-  display: block;
-  width: 100%;
-  border-radius: 22px;
-  box-shadow: var(--shadow-rose);
-  margin: 20px 0 24px;
-  object-fit: cover;
-  aspect-ratio: 1 / 1;
-}
+    @media (min-width: 860px) {
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        padding-bottom: 40px;
+      }
+    }
 
-/* DESKTOP image — hidden on mobile */
-.hero-img-desktop { display: none; }
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+    }
 
-.hero-btns {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-}
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(30px, 8.5vw, 56px);
+      font-weight: 600;
+      line-height: 1.2;
+      color: #000000;
+      margin-bottom: 12px;
+      text-align: center;
+    }
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: linear-gradient(135deg, var(--rose) 0%, #a83258 100%);
-  color: #fff;
-  font-family: 'Hind Siliguri', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 15px 28px;
-  border-radius: 60px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 10px 36px rgba(200,66,106,0.4);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-.btn-primary::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%; width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s;
-}
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 48px rgba(200,66,106,0.5); }
-.btn-primary:hover::after { left: 100%; }
+    @media (min-width: 860px) {
+      .hero h1 {
+        text-align: left;
+      }
+    }
 
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: transparent;
-  color: var(--rose);
-  font-family: 'Hind Siliguri', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  padding: 13px 28px;
-  border-radius: 60px;
-  border: 1.5px solid rgba(200,66,106,0.35);
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s;
-  width: 100%;
-}
-.btn-ghost:hover { background: var(--rose-pale); border-color: var(--rose); }
+    .hero-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: rgba(201, 169, 110, 0.12);
+      border: 1px solid rgba(201, 169, 110, 0.4);
+      color: #8a6520;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin: 0 auto 14px;
+      width: fit-content;
+    }
 
-.hero-stats {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 28px;
-  padding: 16px 0;
-  border-top: 1px solid var(--border);
-}
-.stat-item { text-align: center; }
-.stat-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
-  font-weight: 600;
-  color: var(--rose);
-  display: block;
-}
-.stat-label { font-size: 11px; color: var(--muted); font-weight: 500; }
+    @media (min-width: 860px) {
+      .hero-label {
+        margin: 0 0 14px 0;
+      }
+    }
 
-/* ── SHARED SECTION ── */
-section { padding: 48px 0; }
+    .hero-sub {
+      font-size: 23px;
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-weight: 400;
+      line-height: 1.65;
+      text-align: center;
+    }
 
-.sec-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--rose-pale);
-  color: var(--rose);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  padding: 5px 14px;
-  border-radius: 50px;
-  margin-bottom: 12px;
-}
-.sec-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(24px, 6.5vw, 42px);
-  font-weight: 600;
-  color: var(--charcoal);
-  line-height: 1.25;
-  margin-bottom: 10px;
-}
-.sec-title span { color: var(--rose); font-style: italic; }
-.sec-subtitle { font-size: 14px; color: var(--muted); }
+    @media (min-width: 860px) {
+      .hero-sub {
+        text-align: left;
+      }
+    }
 
-/* ── PROBLEM ── */
-.problem { background: #fff; }
-.problem-inner { display: flex; flex-direction: column; gap: 24px; }
-.problem-img {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: var(--shadow-soft);
-  display: block;
-  object-fit: cover;
-  aspect-ratio: 4/3;
-}
-.prob-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin: 16px 0; }
-.prob-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  background: var(--rose-blush);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 13px 15px;
-  font-size: 14px;
-  color: var(--charcoal);
-  font-weight: 500;
-  line-height: 1.5;
-}
-.prob-icon {
-  width: 30px; height: 30px; min-width: 30px;
-  background: linear-gradient(135deg, var(--rose-light), var(--rose));
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 13px;
-  color: #fff;
-  margin-top: 1px;
-}
-.prob-note {
-  background: linear-gradient(135deg, var(--rose-pale) 0%, #f5e8f7 100%);
-  border-left: 4px solid var(--rose);
-  border-radius: 14px;
-  padding: 16px 18px;
-  font-size: 14px;
-  color: #5a2a40;
-  line-height: 1.65;
-}
-.prob-note strong { color: var(--rose); font-weight: 700; }
+    .hero-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--rose-blush);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 11px 16px;
+      font-size: 13px;
+      color: var(--rose);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
 
-/* ── HOW IT WORKS ── */
-.how { background: var(--rose-blush); }
-.how-inner { display: flex; flex-direction: column; gap: 24px; }
-.how-img {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: var(--shadow-soft);
-  display: block;
-  object-fit: cover;
-  aspect-ratio: 4/3;
-}
-.ingredient-cards { display: flex; flex-direction: column; gap: 12px; }
-.ing-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  background: #fff;
-  border-radius: 16px;
-  padding: 15px 16px;
-  box-shadow: var(--shadow-card);
-}
-.ing-num {
-  width: 34px; height: 34px; min-width: 34px;
-  background: linear-gradient(135deg, var(--rose) 0%, #a83258 100%);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  color: #fff;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
-  font-weight: 700;
-}
-.ing-body h4 { font-size: 14px; font-weight: 700; color: var(--charcoal); margin-bottom: 3px; }
-.ing-body p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    @media (min-width: 860px) {
+      .hero-badge {
+        justify-content: flex-start;
+        width: fit-content;
+      }
+    }
 
-/* ── TRUST ── */
-.trust { background: #fff; }
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-top: 26px;
-}
-.trust-card {
-  background: var(--ivory);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 20px 14px;
-  text-align: center;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-.trust-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--rose), var(--gold));
-  transform: scaleX(0);
-  transition: transform 0.3s;
-}
-.trust-card:hover::before { transform: scaleX(1); }
-.trust-card:hover { box-shadow: var(--shadow-soft); transform: translateY(-3px); }
-.trust-icon { font-size: 26px; margin-bottom: 10px; display: block; }
-.trust-card h4 { font-size: 12.5px; font-weight: 700; color: var(--charcoal); margin-bottom: 5px; }
-.trust-card p { font-size: 11.5px; color: var(--muted); line-height: 1.4; }
+    .hero-img-mobile {
+      display: block;
+      width: 100%;
+      max-width: 450px;
+      border-radius: 22px;
+      box-shadow: var(--shadow-rose);
+      margin: 0 auto 24px;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
 
-/* ── USAGE ── */
-.usage { background: var(--cream); }
-.usage-header { text-align: center; margin-bottom: 22px; }
-.usage-grid { display: flex; flex-direction: column; gap: 14px; }
-.usage-box {
-  background: #fff;
-  border-radius: 20px;
-  padding: 20px 18px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-card);
-}
-.usage-box h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--charcoal);
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.usage-box h3 span {
-  width: 30px; height: 30px;
-  background: linear-gradient(135deg, var(--rose-light), var(--rose));
-  border-radius: 8px;
-  display: inline-flex; align-items: center; justify-content: center;
-  font-size: 14px;
-}
-.step-row {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  margin-bottom: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px dashed rgba(200,66,106,0.15);
-}
-.step-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.step-badge {
-  width: 26px; height: 26px; min-width: 26px;
-  background: var(--rose-pale);
-  color: var(--rose);
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
-  margin-top: 2px;
-}
-.step-row span { font-size: 13.5px; color: #4a2535; line-height: 1.6; }
-.duration-highlight {
-  background: linear-gradient(135deg, var(--rose-pale), #f5e8f7);
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 14px;
-}
-.dur-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 44px;
-  font-weight: 600;
-  color: var(--rose);
-  line-height: 1;
-  display: block;
-}
-.dur-unit { font-size: 13px; color: var(--muted); margin-top: 4px; display: block; }
+    @media (min-width: 860px) {
+      .hero-img-mobile {
+        display: none;
+      }
+    }
 
-/* ── WARNING ── */
-.warning-sec { background: #fff; }
-.warn-card {
-  background: linear-gradient(135deg, #fff9f0 0%, #fef6f0 100%);
-  border: 1.5px solid #f0c8a8;
-  border-radius: 20px;
-  padding: 20px 18px;
-  margin-top: 20px;
-}
-.warn-card h3 {
-  font-size: 15.5px;
-  font-weight: 700;
-  color: #7a3810;
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.warn-row {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  font-size: 13.5px;
-  color: #5a2810;
-  margin-bottom: 10px;
-  line-height: 1.55;
-}
-.warn-row::before { content: '◆'; color: #e09060; font-size: 10px; margin-top: 4px; flex-shrink: 0; }
+    .hero-img-desktop {
+      display: none;
+      width: 100%;
+      border-radius: 30px;
+      box-shadow: var(--shadow-rose);
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
 
-/* ── ORDER ── */
-.order-sec {
-  background: linear-gradient(145deg, var(--charcoal) 0%, #3d1830 50%, #2a1228 100%);
-  position: relative;
-  overflow: hidden;
-  padding: 56px 18px;
-}
-.order-sec::before {
-  content: '';
-  position: absolute;
-  top: -70px; right: -70px;
-  width: 340px; height: 340px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(200,66,106,0.25) 0%, transparent 70%);
-  pointer-events: none;
-}
-.order-sec::after {
-  content: '';
-  position: absolute;
-  bottom: -50px; left: -40px;
-  width: 260px; height: 260px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(201,169,110,0.15) 0%, transparent 70%);
-  pointer-events: none;
-}
-.order-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
-.order-img {
-  width: 200px;
-  height: 200px;
-  border-radius: 24px;
-  box-shadow: 0 24px 70px rgba(0,0,0,0.4);
-  display: block;
-  object-fit: cover;
-  border: 2px solid rgba(201,169,110,0.3);
-}
-.order-content { width: 100%; }
-.order-label {
-  display: inline-block;
-  background: linear-gradient(90deg, var(--gold), #e8c87a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.order-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(28px, 8vw, 48px);
-  font-weight: 600;
-  color: #fff;
-  line-height: 1.15;
-  margin-bottom: 10px;
-}
-.order-subtitle { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 20px; }
-.order-product-box {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 16px;
-  padding: 16px 18px;
-  margin-bottom: 18px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  text-align: left;
-}
-.prod-icon { font-size: 26px; }
-.prod-name { font-size: 13.5px; font-weight: 700; color: #fff; margin-bottom: 3px; }
-.prod-ml { font-size: 12px; color: rgba(255,255,255,0.5); }
-.delivery-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 22px;
-  justify-content: center;
-}
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  background: rgba(255,255,255,0.09);
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 50px;
-  padding: 8px 16px;
-  color: rgba(255,255,255,0.85);
-  font-size: 13px;
-  font-weight: 500;
-}
-.chip-icon { font-size: 14px; }
-.btn-order-big {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  background: linear-gradient(135deg, var(--rose) 0%, #a83258 100%);
-  color: #fff;
-  font-family: 'Hind Siliguri', sans-serif;
-  font-size: 17px;
-  font-weight: 700;
-  padding: 18px 28px;
-  border-radius: 60px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 14px 50px rgba(200,66,106,0.55);
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-.btn-order-big::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%; width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s;
-}
-.btn-order-big:hover { transform: translateY(-3px); box-shadow: 0 22px 60px rgba(200,66,106,0.65); }
-.btn-order-big:hover::after { left: 100%; }
-.stock-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(201,169,110,0.15);
-  border: 1px solid rgba(201,169,110,0.35);
-  border-radius: 50px;
-  padding: 8px 18px;
-  color: var(--gold-light);
-  font-size: 12px;
-  font-weight: 600;
-  margin-top: 16px;
-}
-.stock-badge::before { content: '⚡'; }
+    @media (min-width: 860px) {
+      .hero-img-desktop {
+        display: block;
+      }
+    }
 
-/* ── FOOTER ── */
-footer {
-  background: #1c1018;
-  color: rgba(255,255,255,0.4);
-  text-align: center;
-  padding: 20px 16px;
-  font-size: 12px;
-  line-height: 1.9;
-}
-footer strong { color: rgba(255,255,255,0.6); }
+    .hero-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
 
-/* ══════════════════════════
-   TABLET ≥ 640px
-══════════════════════════ */
-@media (min-width: 640px) {
-  .topbar { font-size: 13px; letter-spacing: 1.2px; }
-  .trust-grid { grid-template-columns: repeat(4, 1fr); }
-  .usage-grid { flex-direction: row; }
-  .usage-grid .usage-box { flex: 1; }
-  .delivery-chips { justify-content: flex-start; }
-}
+    @media (min-width: 860px) {
+      .hero-btns {
+        flex-direction: row;
+      }
+    }
 
-/* ══════════════════════════
-   DESKTOP ≥ 860px
-══════════════════════════ */
-@media (min-width: 860px) {
-  .hero { padding: 80px 24px 0; }
+    .btn-primary,
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 15px 28px;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
 
-  /* Two-column hero */
-  .hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-  }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--rose) 0%, #a83258 100%);
+      box-shadow: 0 10px 36px rgba(200, 66, 106, 0.4);
+    }
 
-  /* Hide mobile image, show desktop image */
-  .hero-img-mobile { display: none; }
-  .hero-img-desktop {
-    display: block;
-    width: 100%;
-    border-radius: 0 0 30px 30px;
-    box-shadow: var(--shadow-rose);
-    object-fit: cover;
-    aspect-ratio: 1/1;
-  }
+    .btn-whatsapp {
+      background: #25D366;
+      box-shadow: 0 10px 36px rgba(37, 211, 102, 0.3);
+    }
 
-  /* Badge: restore auto width on desktop */
-  .hero-badge { width: auto; margin: 16px 0 28px; }
+    .hero-stats {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 28px;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+    }
 
-  /* Buttons: side by side, auto width */
-  .hero-btns { flex-direction: row; }
-  .btn-primary { width: auto; }
-  .btn-ghost   { width: auto; }
+    .stat-item {
+      text-align: center;
+    }
 
-  section { padding: 80px 0; }
+    .stat-num {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--rose);
+      display: block;
+    }
 
-  .problem-inner { flex-direction: row; gap: 50px; align-items: center; }
-  .problem-inner > div { flex: 1; }
+    .stat-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+    }
 
-  .how-inner { flex-direction: row; gap: 50px; align-items: center; }
-  .how-inner .ingredient-cards { flex: 1.1; order: 1; }
-  .how-inner .how-img-wrap { flex: 1; order: 2; }
+    /* ── SHARED SECTION ── */
+    section {
+      padding: 48px 0;
+    }
 
-  .order-inner {
-    flex-direction: row;
-    text-align: left;
-    gap: 60px;
-    align-items: center;
-  }
-  .order-img { width: 300px; height: 300px; }
-  .btn-order-big { width: auto; }
-  .delivery-chips { justify-content: flex-start; }
-}
-</style>
+    .sec-title {
+      font-family: var(--font-serif);
+      font-size: clamp(24px, 6.5vw, 42px);
+      font-weight: 600;
+      color: #000000;
+      line-height: 1.25;
+      margin-bottom: 10px;
+      text-align: center;
+    }
 
-<!-- TOP BAR -->
-<div class="topbar">🚚 সারা বাংলাদেশে ফ্রি ক্যাশ অন ডেলিভারি &nbsp;|&nbsp; অরিজিনাল কোরিয়ান প্রোডাক্ট ✦ সীমিত স্টক</div>
+    @media (min-width: 860px) {
+      .sec-title {
+        text-align: left;
+      }
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
+      .sec-title.center-desktop {
+        text-align: center;
+      }
+    }
 
-    <!-- TEXT (+ mobile image embedded here) -->
-    <div class="hero-text">
-      <div class="hero-label">DERMA HOUSE · KOREA</div>
-      <h1 class="serif">আপনি কি আপনার<br><em>ফিগার নিয়ে</em><br>সন্তুষ্ট নন?</h1>
-      <p class="hero-sub">ঢিলে ভাব নয়—পান <strong>টাইট, ভরাট ও আকর্ষণীয় ফিগার</strong> সঠিক কেয়ারে</p>
+    /* ── PROBLEM ── */
+    .prob-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 16px 0;
+      font: bold;
 
-      <!-- Badge -->
-      <div class="hero-badge">ডার্মাটোলজিক্যালি টেস্টেড কোরিয়ান ফর্মুলা</div>
+    }
 
-      <!-- MOBILE ONLY: image immediately below badge -->
-      <img
-        src="images/img1.jpg"
-        alt="DERMA HOUSE Breast Tightening Cream"
-        class="hero-img-mobile"
-      />
+    .prob-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--rose-blush);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 13px 15px;
+      font: bold;
+      font-size: 20px;
+      color: var(--charcoal);
+      font-weight: 500;
+    }
 
-      <div class="hero-btns">
-        <a href="#order" class="btn-primary">👉 এখনই অর্ডার করুন</a>
-        <a href="#" class="btn-ghost">▶ ভিডিওটি দেখুন</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-num serif">125ml</span>
-          <span class="stat-label">ক্রিমের পরিমাণ</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num serif">১–২</span>
-          <span class="stat-label">মাস ব্যবহার</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num serif">২×</span>
-          <span class="stat-label">দৈনিক প্রয়োগ</span>
-        </div>
-      </div>
-    </div>
+    .prob-icon {
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+      background: linear-gradient(135deg, var(--rose-light), var(--rose));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
 
-    <!-- DESKTOP ONLY: right-column image -->
-    <div>
-      <img
-        src="images/img1.jpg"
-        alt="DERMA HOUSE Breast Tightening Cream"
-        class="hero-img-desktop"
-      />
-    </div>
+    /* ── HOW IT WORKS ── */
+    .ing-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 15px 16px;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 12px;
+    }
 
-  </div>
-</section>
+    .ing-num {
+      width: 34px;
+      height: 34px;
+      min-width: 34px;
+      background: linear-gradient(135deg, var(--rose) 0%, #a83258 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+    }
 
-<!-- PROBLEM -->
-<section class="problem">
-  <div class="container">
-    <div class="problem-inner">
-      <div>
-        <img src="images/img2.jpg" alt="সমস্যা" class="problem-img" />
-      </div>
-      <div>
-        <div class="sec-label">😔 আপনার সমস্যা</div>
-        <h2 class="sec-title serif">আপনি কি এসব<br><span>সমস্যায় ভুগছেন?</span></h2>
-        <ul class="prob-list">
-          <li class="prob-item"><div class="prob-icon">😢</div>নিজের বডি শেপ দেখে মন খারাপ হয়</li>
-          <li class="prob-item"><div class="prob-icon">👗</div>ড্রেস পরলেও ঠিকমতো শেপ ফুটে ওঠে না</li>
-          <li class="prob-item"><div class="prob-icon">🪞</div>আয়নায় দাঁড়িয়ে মনে হয়—আগের মতো নেই</li>
-          <li class="prob-item"><div class="prob-icon">💔</div>পছন্দের ড্রেস পরলেও ভালো লাগে না</li>
-          <li class="prob-item"><div class="prob-icon">🌸</div>মনে হয়—আগের মতো আকর্ষণীয় দেখাচ্ছে না</li>
-        </ul>
-        <div class="prob-note">এই সমস্যাগুলো যদি আপনার সাথেও মিলে যায়—<strong>তাহলে আপনি একা নন।</strong> অনেকেই এর সঠিক কেয়ার সম্পর্কে জানেন না।</div>
-      </div>
-    </div>
-  </div>
-</section>
+    .ing-body p {
+      font-weight: 700;
+      color: var(--charcoal);
+    }
 
-<!-- HOW IT WORKS -->
-<section class="how">
-  <div class="container">
-    <div class="how-inner">
-      <div class="ingredient-cards">
-        <div class="sec-label">🔬 বিজ্ঞান ও উপাদান</div>
-        <h2 class="sec-title serif">এই ক্রিমটি<br><span>কীভাবে কাজ করে?</span></h2>
-        <div class="ing-card"><div class="ing-num">১</div><div class="ing-body"><h4>অ্যালোভেরা ও ভিটামিন E</h4><p>ত্বক টানটান ও ভরাট রাখতে সাহায্য করে, ঢিলে ভাব কমায়</p></div></div>
-        <div class="ing-card"><div class="ing-num">২</div><div class="ing-body"><h4>গ্রিন টি ও ক্যালেন্ডুলা</h4><p>ত্বককে নরম, সতেজ ও মসৃণ রাখে</p></div></div>
-        <div class="ing-card"><div class="ing-num">৩</div><div class="ing-body"><h4>ভিটামিন C কমপ্লেক্স</h4><p>ত্বকের গঠন ঠিক করে, শেপ সুন্দরভাবে ফুটিয়ে তোলে</p></div></div>
-        <div class="ing-card"><div class="ing-num">৪</div><div class="ing-body"><h4>পুষ্টিকর উপাদান সমূহ</h4><p>ত্বককে ফ্রেশ ও হেলদি রাখতে সহায়তা করে</p></div></div>
-        <div class="ing-card"><div class="ing-num">৫</div><div class="ing-body"><h4>হালকা কোরিয়ান ফর্মুলা</h4><p>দ্রুত মিশে গিয়ে আরামদায়ক অনুভূতি দেয়</p></div></div>
-      </div>
-      <div class="how-img-wrap">
-        <img src="images/img3.jpg" alt="উপাদান" class="how-img" />
-      </div>
-    </div>
-  </div>
-</section>
+    /* ── PRODUCT SECTION ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
 
-<!-- TRUST -->
-<section class="trust">
-  <div class="container">
-    <div style="text-align:center;">
-      <div class="sec-label">🛡️ নিরাপত্তা ও আস্থা</div>
-      <h2 class="sec-title serif">কেন এই ক্রিমটি<br><span>নিরাপদ ও ভরসাযোগ্য?</span></h2>
-    </div>
-    <div class="trust-grid">
-      <div class="trust-card"><span class="trust-icon">🇰🇷</span><h4>উন্নত কোরিয়ান ফর্মুলা</h4><p>কোরিয়ার উন্নত ডার্মা বিজ্ঞানে তৈরি নির্ভরযোগ্য প্রোডাক্ট</p></div>
-      <div class="trust-card"><span class="trust-icon">🌿</span><h4>ক্ষতিকর কেমিক্যাল মুক্ত</h4><p>ত্বক-বান্ধব, সম্পূর্ণ নিরাপদ ও পরীক্ষিত ফর্মুলা</p></div>
-      <div class="trust-card"><span class="trust-icon">💆</span><h4>সব ত্বকে উপযোগী</h4><p>বেশিরভাগ ত্বকের ধরনের জন্য উপযুক্ত ও পরীক্ষিত</p></div>
-      <div class="trust-card"><span class="trust-icon">⚡</span><h4>দ্রুত শোষিত ফর্মুলা</h4><p>হালকা টেক্সচার, তাৎক্ষণিকভাবে ত্বকে মিশে যায়</p></div>
-    </div>
-  </div>
-</section>
+    @media (min-width: 768px) {
+      .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
 
-<!-- USAGE -->
-<section class="usage">
-  <div class="container">
-    <div class="usage-header">
-      <div class="sec-label">📋 ব্যবহারবিধি</div>
-      <h2 class="sec-title serif">কিভাবে <span>ব্যবহার করবেন?</span></h2>
-      <p class="sec-subtitle">সঠিক উপায়ে ব্যবহার করলে দ্রুত ও কার্যকর ফলাফল পাবেন</p>
-    </div>
-    <div class="usage-grid">
-      <div class="usage-box">
-        <h3><span>🌸</span> ব্যবহারের নিয়ম</h3>
-        <div class="step-row"><div class="step-badge">১</div><span>প্রথমে ব্রেস্টের চারপাশের ত্বক পরিষ্কার করে শুকিয়ে নিন</span></div>
-        <div class="step-row"><div class="step-badge">২</div><span>অল্প পরিমাণ ক্রিম নিয়ে ব্রেস্টের চারপাশে লাগান (নিপল এরিয়া এড়িয়ে)</span></div>
-        <div class="step-row"><div class="step-badge">৩</div><span>নিচ থেকে উপরের দিকে হালকা হাতে ম্যাসাজ করুন</span></div>
-        <div class="step-row"><div class="step-badge">৪</div><span>দিনে ২ বার ব্যবহার করুন—সকাল ও রাতে</span></div>
-      </div>
-      <div class="usage-box">
-        <h3><span>⏰</span> কতদিন চলবে?</h3>
-        <div class="duration-highlight">
-          <span class="dur-num serif">১–১.৫</span>
-          <span class="dur-unit">মাস প্রতিটি ক্রিমে (নিয়মিত ব্যবহারে)</span>
-        </div>
-        <div class="step-row"><div class="step-badge">✓</div><span>১টি ক্রিম নিয়মিত ব্যবহারে প্রায় ১–১.৫ মাস পর্যন্ত চলবে</span></div>
-        <div class="step-row"><div class="step-badge">✓</div><span>ভালো ফল পেতে <strong style="color:var(--rose)">১–২ মাস নিয়মিত</strong> ব্যবহার করুন</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+    .product-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-<!-- WARNING -->
-<section class="warning-sec">
-  <div class="container">
-    <div class="sec-label">⚠️ সতর্কতা</div>
-    <h2 class="sec-title serif">ব্যবহারের আগে <span>জেনে নিন</span></h2>
-    <div class="warn-card">
-      <h3>⚠️ গুরুত্বপূর্ণ সতর্কতা</h3>
-      <div class="warn-row">শুধুমাত্র বাহ্যিক ব্যবহারের জন্য</div>
-      <div class="warn-row">নিপল ও সংবেদনশীল স্থানে ব্যবহার করবেন না</div>
-      <div class="warn-row">কাটা বা ক্ষতস্থানে ব্যবহার করবেন না</div>
-      <div class="warn-row">গর্ভবতী বা দুধ পান করান এমন মায়েদের জন্য নয়</div>
-      <div class="warn-row">আগে হাতে অল্প ব্যবহার করে পরীক্ষা করে নিন</div>
-    </div>
-  </div>
-</section>
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 16px;
+    }
 
-<!-- ORDER -->
-<section class="order-sec" id="order">
-  <div class="order-inner">
-    <div>
-      <img src="images/img4.jpg" alt="DERMA HOUSE Product" class="order-img" />
-    </div>
-    <div class="order-content">
-      <div class="order-label">✦ LIMITED STOCK AVAILABLE ✦</div>
-      <h2 class="order-title serif">এখনই অর্ডার<br>করুন</h2>
-      <p class="order-subtitle">অরিজিনাল কোরিয়ান <strong style="color:rgba(255,255,255,0.9)">DERMA HOUSE</strong> Breast Tightening Cream</p>
-      <div class="order-product-box">
-        <span class="prod-icon">🧴</span>
-        <div>
-          <div class="prod-name">DERMA HOUSE Breast Tightening Cream</div>
-          <div class="prod-ml">125 ml · অরিজিনাল কোরিয়ান প্যাকেজিং</div>
-        </div>
-      </div>
-      <div class="delivery-chips">
-        <div class="chip"><span class="chip-icon">🚚</span> ফ্রি ক্যাশ অন ডেলিভারি</div>
-        <div class="chip"><span class="chip-icon">🇧🇩</span> সারা বাংলাদেশে</div>
-      </div>
-      <a href="#" class="btn-order-big">👉 এখনই অর্ডার করুন</a>
-      <div><div class="stock-badge">আজই অর্ডার করুন—সীমিত স্টক উপলব্ধ!</div></div>
-    </div>
-  </div>
-</section>
+    .product-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 8px;
+    }
 
-<!-- FOOTER -->
-<footer>
-  <strong>© DERMA HOUSE Bangladesh</strong> &nbsp;|&nbsp; অরিজিনাল কোরিয়ান বিউটি প্রোডাক্ট<br>সারা বাংলাদেশে ডেলিভারি
-</footer>
+    .product-card .price {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--rose);
+      margin-bottom: 16px;
+    }
+
+    .product-card .discount-tag {
+      background: #ff4d4d;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    /* ── INGREDIENTS ── */
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    @media (min-width: 860px) {
+      .ingredients-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .ingredient-item {
+      text-align: center;
+    }
+
+    .ingredient-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      border: 3px solid var(--rose-pale);
+      object-fit: cover;
+    }
+
+    .ingredient-item p {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    /* ── TRUST ── */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    @media (min-width: 640px) {
+      .trust-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .trust-card {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px 14px;
+      text-align: center;
+    }
+
+    /* ── USAGE ── */
+    .usage-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    @media (min-width: 640px) {
+      .usage-grid {
+        flex-direction: row;
+      }
+
+      .usage-grid>div {
+        flex: 1;
+      }
+    }
+
+    .usage-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px 18px;
+      border: 1px solid var(--border);
+    }
+
+    /* Common Styles */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    section {
+      padding: 50px 0;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #000;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Trust Section Styles */
+    .trust-section {
+      background-color: #fff;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    @media (min-width: 768px) {
+      .trust-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .trust-card {
+      background: #fffbf9;
+      border: 1px solid rgba(200, 66, 106, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    }
+
+    .trust-icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .trust-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #2a1e26;
+      margin-bottom: 8px;
+    }
+
+    .trust-card p {
+      font-size: 13px;
+      color: #7a5c6a;
+      line-height: 1.5;
+    }
+
+    /* Usage Section Styles */
+    .usage-section {
+      background-color: #fefaf8;
+    }
+
+    .usage-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .usage-grid {
+        flex-direction: row;
+      }
+
+      .usage-grid>div {
+        flex: 1;
+      }
+    }
+
+    .usage-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 25px;
+      border: 1px solid rgba(200, 66, 106, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .usage-box-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #c8426a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .usage-steps p {
+      font-size: 14px;
+      line-height: 2.2;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .duration-card {
+      background: #f9e8ef;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .duration-num {
+      font-size: 40px;
+      font-weight: 800;
+      color: #c8426a;
+      display: block;
+      line-height: 1;
+    }
+
+    .duration-text {
+      font-size: 13px;
+      color: #7a5c6a;
+    }
+
+    .duration-note {
+      font-size: 14px;
+      text-align: center;
+      color: #555;
+      font-weight: 600;
+    }
+
+    /* Warning Section Styles */
+    .warning-section {
+      background-color: #fff;
+    }
+
+    .warning-box {
+      background: #fff9f0;
+      border: 1.5px solid #f0c8a8;
+      border-radius: 20px;
+      padding: 30px;
+    }
+
+    .warning-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #7a3810;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .warning-list p {
+      font-size: 15px;
+      color: #5a2810;
+      line-height: 2;
+      margin-bottom: 8px;
+    }
+
+    /* Gallery Section Styles */
+    .gallery-section {
+      padding: 40px 0;
+      background-color: #fffbf9;
+      /* হালকা আইভরি ব্যাকগ্রাউন্ড */
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* মোবাইলে ১টি কলাম */
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        /* ডেক্সটপে ২টি কলাম */
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 24px;
+      /* রাউন্ডেড কর্নার */
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(200, 66, 106, 0.12);
+      /* হালকা গোলাপি শ্যাডো */
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border: 4px solid #fff;
+      /* সাদা ফ্রেম */
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      /* হোভার করলে উপরে উঠবে */
+      box-shadow: 0 20px 40px rgba(200, 66, 106, 0.2);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 320px;
+      /* ইমেজের উচ্চতা */
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+      /* হোভার করলে ইমেজ কিছুটা জুম হবে */
+    }
+
+    /* ইমেজের ওপরের টেক্সট ওভারলে */
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      /* নিচ থেকে কালো গ্রেডিয়েন্ট */
+      padding: 30px 20px 20px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .gallery-badge {
+      display: inline-block;
+      background: var(--rose);
+      /* আপনার থিম কালার */
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .gallery-overlay p {
+      font-size: 18px;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ── ORDER ── */
+    .order-sec {
+      background: linear-gradient(145deg, var(--charcoal) 0%, #3d1830 50%, #2a1228 100%);
+      padding: 56px 18px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .order-title {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 8vw, 48px);
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #1c1018;
+      color: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      padding: 20px 16px;
+      font-size: 12px;
+    }
+
+    /* Utility */
+    .flex-row-desktop {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .flex-row-desktop {
+        flex-direction: row;
+      }
+
+      .flex-row-desktop>div {
+        flex: 1;
+      }
+    }
+
+    .order-sec {
+      background: linear-gradient(145deg, var(--charcoal) 0%, #3d1830 50%, #2a1228 100%);
+      padding: 60px 18px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .order-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    @media (min-width: 1024px) {
+      .order-inner {
+        flex-direction: row;
+        text-align: left;
+      }
+
+      .order-inner>div {
+        flex: 1;
+      }
+    }
+
+    .order-img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 30px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .order-label {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .order-title {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 8vw, 52px);
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    .order-subtitle {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 25px;
+    }
+
+    .delivery-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+
+    @media (min-width: 1024px) {
+      .delivery-chips {
+        justify-content: flex-start;
+      }
+    }
+
+    .chip {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-order-big {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--rose) 0%, #a83258 100%);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 20px 40px;
+      border-radius: 60px;
+      text-decoration: none;
+      box-shadow: 0 15px 40px rgba(200, 66, 106, 0.5);
+      transition: all 0.3s;
+      width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+      .btn-order-big {
+        width: auto;
+      }
+    }
+
+    .btn-order-big:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px rgba(200, 66, 106, 0.6);
+    }
+
+    .stock-badge {
+      display: inline-block;
+      margin-top: 20px;
+      background: rgba(201, 169, 110, 0.2);
+      border: 1px solid rgba(201, 169, 110, 0.4);
+      padding: 6px 16px;
+      border-radius: 50px;
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    footer {
+      background: #1c1018;
+      color: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      padding: 30px 16px;
+      font-size: 13px;
+    }
+
+    /* Shared Styles */
+    .ing-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 15px 16px;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 12px;
+    }
+
+    .ing-num {
+      width: 34px;
+      height: 34px;
+      min-width: 34px;
+      background: var(--rose);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .prob-list {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .prob-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--rose-blush);
+      padding: 12px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+  </style>
 </head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    🚚 সারা বাংলাদেশে ফ্রি ক্যাশ অন ডেলিভারি | অরিজিনাল কোরিয়ান প্রোডাক্ট ✦ সীমিত স্টক
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-label">DERMA HOUSE · KOREA</div>
+        <h1>আপনি কি আপনার ফিগার নিয়ে সন্তুষ্ট নন?</h1>
+        <p class="hero-sub">ঢিলে ভাব নয়—পান টাইট, ভরাট ও আকর্ষণীয় ফিগার সঠিক কেয়ারে</p>
+
+        <div class="hero-badge">ডার্মাটোলজিক্যালি টেস্টেড কোরিয়ান ফর্মুলা</div>
+
+        <!-- MOBILE IMAGE -->
+        <img src="images/hero.jpeg" alt="Hero Image" class="hero-img-mobile">
+
+        <div class="hero-btns">
+          <a href="#order" class="btn-primary">🛒 এখনই অর্ডার করুন</a>
+          <a href="https://wa.me/8801700000000" target="_blank" class="btn-whatsapp">💬 WhatsApp এ অর্ডার করুন</a>
+        </div>
+
+
+
+        <!-- DESKTOP IMAGE -->
+        <div class="hero-img-desktop">
+          <img src="images/hero.jpeg" alt="Hero Image" style="width: 100%; border-radius: 30px;">
+        </div>
+      </div>
+  </section>
+
+  <!-- PROBLEM SECTION -->
+  <section style="background: white;">
+    <div class="container">
+      <div class="flex-row-desktop">
+        <div>
+          <img src="images/problem.jpeg" alt="Problem" style="width: 100%; border-radius: 16px;">
+        </div>
+        <div>
+          <h2 class="sec-title">আপনার সমস্যার সমাধান</h2>
+          <ul class="prob-list">
+            <li class="prob-item">
+              <div class="prob-icon">😢</div>নিজের বডি শেপ দেখে মন খারাপ হয়
+            </li>
+            <li class="prob-item">
+              <div class="prob-icon">👗</div>ড্রেস পরলেও ঠিকমতো শেপ ফুটে ওঠে না
+            </li>
+            <li class="prob-item">
+              <div class="prob-icon">🪞</div>আয়নায় দাঁড়িয়ে মনে হয়—আগের মতো নেই
+            </li>
+            <li class="prob-item">
+              <div class="prob-icon">💔</div>পছন্দের ড্রেস পরলেও ভালো লাগে না
+            </li>
+            <li class="prob-item">
+              <div class="prob-icon">🌸</div>মনে হয়—আগের মতো আকর্ষণীয় দেখাচ্ছে না
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="background: #fdf3f6;">
+    <div class="container">
+      <div class="flex-row-desktop">
+        <div style="order: 2;">
+          <h2 class="sec-title">এই ক্রিমটি কীভাবে কাজ করে?</h2>
+          <div class="ing-card">
+            <div class="ing-num">১</div>
+            <div class="ing-body">
+              <p>অ্যালোভেরা ও ভিটামিন E ত্বক টানটান ও ভরাট রাখতে সাহায্য করে, ঢিলে ভাব কমায়</p>
+            </div>
+          </div>
+          <div class="ing-card">
+            <div class="ing-num">২</div>
+            <div class="ing-body">
+              <p>গ্রিন টি ও ক্যালেন্ডুলা ত্বককে নরম, সতেজ ও মসৃণ রাখে</p>
+            </div>
+          </div>
+          <div class="ing-card">
+            <div class="ing-num">৩</div>
+            <div class="ing-body">
+              <p>ভিটামিন C কমপ্লেক্স ত্বকের গঠন ঠিক করে, শেপ সুন্দরভাবে ফুটিয়ে তোলে</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT SECTION -->
+  <section style="background: white;">
+    <div class="container">
+      <h2 class="sec-title center-desktop">আমাদের প্রোডাক্ট সমূহ</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/p1.jpeg" alt="Product 1">
+          <h3>ডারমা হাউজ ব্রেস্ট টাইটেনিং ক্রিম</h3>
+          <p class="price">১৫০০ টাকা</p>
+          <a href="#order" class="btn-primary">অর্ডার করুন</a>
+        </div>
+        <div class="product-card">
+          <img src="images/p2.jpeg" alt="Product 2">
+          <h3>ডারমা হাউস ব্রেস্ট এনলাজমেন্ট ক্রিম</h3>
+          <p class="price">১৫০০ টাকা</p>
+          <a href="#order" class="btn-primary">অর্ডার করুন</a>
+        </div>
+        <div class="product-card" style="border: 2px solid var(--rose);">
+          <div class="discount-tag">২০% ডিসকাউন্ট</div>
+          <img src="images/p3.jpeg" alt="Combo">
+          <h3>কম্বো প্যাক (২টি ক্রিম)</h3>
+          <p style="text-decoration: line-through; color: gray;">৩০০০ টাকা</p>
+          <p class="price">২৪০০ টাকা</p>
+          <p style="font-size: 12px; font-weight: bold;">কম্বো কিনলে ২০% ডিসকাউন্টে ৩০০০ টাকার প্রোডাক্ট ২৪০০ টাকায়
+            পাচ্ছেন</p>
+          <a href="#order" class="btn-primary" style="margin-top: 10px;">কম্বো অর্ডার করুন</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INGREDIENTS SECTION -->
+  <section style="background: #fefaf8;">
+    <div class="container">
+      <h2 class="sec-title center-desktop">মূল উপাদান সমূহ</h2>
+      <div class="ingredients-grid">
+        <div class="ingredient-item">
+          <img src="images/মিনারেল অয়েল.jpeg" class="ingredient-img">
+          <p>মিনারেল অয়েল</p>
+        </div>
+        <div class="ingredient-item">
+          <img src="images/ম্যাংগো এক্সট্র্যাক্ট.jpeg" class="ingredient-img">
+          <p>ম্যাংগো এক্সট্র্যাক্ট</p>
+        </div>
+        <div class="ingredient-item">
+          <img src="images/এলোভেরা.jpeg" class="ingredient-img">
+          <p>অ্যালোভেরা এক্সট্র্যাক্ট</p>
+        </div>
+        <div class="ingredient-item">
+          <img src="images/গ্রিনটি এক্সট্রাক্ট.jpeg" class="ingredient-img">
+          <p>গ্রিন টি এক্সট্র্যাক্ট</p>
+        </div>
+        <div class="ingredient-item">
+          <img src="images/ক্যালেন্ডুলা .jpeg" class="ingredient-img">
+          <p>ক্যালেন্ডুলা ফুলের নির্যাস</p>
+        </div>
+        <div class="ingredient-item">
+          <img src="images/ভিটামিন ই.jpeg" class="ingredient-img">
+          <p>ভিটামিন ই</p>
+        </div>
+        <div class="ingredient-item">
+          <img src="images/ভিটামিন সি.jpeg" class="ingredient-img">
+          <p>ভিটামিন সি</p>
+        </div>
+        <div class="ingredient-item">
+          <img src="images/জ্যানথান ঘাম.jpeg" class="ingredient-img">
+          <p>জ্যানথান গাম</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- কেন আমাদের ওপর ভরসা করবেন? -->
+  <!-- GALLERY SECTION (Above Trust Section) -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="gallery-grid">
+        <!-- Image Card 1 -->
+        <div class="gallery-item">
+          <img src="images/t1.jpeg" alt="Premium Care" referrerPolicy="no-referrer">
+          <div class="gallery-overlay">
+            <div class="gallery-badge">Premium</div>
+            <p>১০০% নিরাপদ ও প্রাকৃতিক উপাদান</p>
+          </div>
+        </div>
+        <!-- Image Card 2 -->
+        <div class="gallery-item">
+          <img src="images/p2.jpeg" alt="Korean Formula" referrerPolicy="no-referrer">
+          <div class="gallery-overlay">
+            <div class="gallery-badge">Korean</div>
+            <p>উন্নত কোরিয়ান ডার্মা ফর্মুলা</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="trust-section">
+    <div class="container">
+      <h2 class="section-title">কেন আমাদের ওপর ভরসা করবেন?</h2>
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-icon">🇰🇷</div>
+          <h3>উন্নত কোরিয়ান ফর্মুলা</h3>
+          <p>কোরিয়ার উন্নত ডার্মা বিজ্ঞানে তৈরি নির্ভরযোগ্য প্রোডাক্ট</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon">🌿</div>
+          <h3>ক্ষতিকর কেমিক্যাল মুক্ত</h3>
+          <p>ত্বক-বান্ধব, সম্পূর্ণ নিরাপদ ও পরীক্ষিত ফর্মুলা</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon">💆</div>
+          <h3>সব ত্বকে উপযোগী</h3>
+          <p>বেশিরভাগ ত্বকের ধরনের জন্য উপযুক্ত ও পরীক্ষিত</p>
+        </div>
+        <div class="trust-card">
+          <div class="trust-icon">⚡</div>
+          <h3>দ্রুত শোষিত ফর্মুলা</h3>
+          <p>হালকা টেক্সচার, তাৎক্ষণিকভাবে ত্বকে মিশে যায়</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- কিভাবে ব্যবহার করবেন? -->
+  <section class="usage-section">
+    <div class="container">
+      <h2 class="section-title">কিভাবে ব্যবহার করবেন?</h2>
+      <div class="usage-grid">
+        <div class="usage-box">
+          <h3 class="usage-box-title">🌸 ব্যবহারের নিয়ম</h3>
+          <div class="usage-steps">
+            <p>১. প্রথমে ব্রেস্টের চারপাশের ত্বক পরিষ্কার করে শুকিয়ে নিন</p>
+            <p>২. অল্প পরিমাণ ক্রিম নিয়ে ব্রেস্টের চারপাশে লাগান (নিপল এরিয়া এড়িয়ে)</p>
+            <p>৩. নিচ থেকে উপরের দিকে হালকা হাতে ম্যাসাজ করুন</p>
+            <p>৪. দিনে ২ বার ব্যবহার করুন—সকাল ও রাতে</p>
+          </div>
+        </div>
+        <div class="usage-box">
+          <h3 class="usage-box-title">⏰ কতদিন চলবে?</h3>
+          <div class="duration-card">
+            <span class="duration-num">১–১.৫</span>
+            <span class="duration-text">মাস প্রতিটি ক্রিমে (নিয়মিত ব্যবহারে)</span>
+          </div>
+          <p class="duration-note">ভালো ফল পেতে ১–২ মাস নিয়মিত ব্যবহার করুন</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- গুরুত্বপূর্ণ সতর্কতা -->
+  <section class="warning-section">
+    <div class="container">
+      <div class="warning-box">
+        <h3 class="warning-title">⚠️ গুরুত্বপূর্ণ সতর্কতা</h3>
+        <div class="warning-list">
+          <p>• শুধুমাত্র বাহ্যিক ব্যবহারের জন্য</p>
+          <p>• নিপল ও সংবেদনশীল স্থানে ব্যবহার করবেন না</p>
+          <p>• কাটা বা ক্ষতস্থানে ব্যবহার করবেন না</p>
+          <p>• গর্ভবতী বা দুধ পান করান এমন মায়েদের জন্য নয়</p>
+          <p>• আগে হাতে অল্প ব্যবহার করে পরীক্ষা করে নিন</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER SECTION -->
+  <section id="order" class="order-sec">
+    <div class="order-inner">
+      <div>
+        <img src="images/order.jpeg" alt="Order Product" class="order-img">
+      </div>
+      <div>
+        <div class="order-label">✦ LIMITED STOCK AVAILABLE ✦</div>
+        <h2 class="order-title serif">এখনই অর্ডার করুন</h2>
+        <p class="order-subtitle">অরিজিনাল কোরিয়ান DERMA HOUSE Breast Care Solutions</p>
+
+        <div class="delivery-chips">
+          <div class="chip">🚚 ফ্রি ক্যাশ অন ডেলিভারি</div>
+          <div class="chip">🇧🇩 সারা বাংলাদেশে</div>
+        </div>
+
+        <a href="https://wa.me/8801700000000" target="_blank" class="btn-order-big">
+          👉 অর্ডার করতে ক্লিক করুন
+        </a>
+
+        <div style="margin-top: 15px;">
+          <span class="stock-badge">⚡ আজই অর্ডার করুন—সীমিত স্টক উপলব্ধ!</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+
+</body>
+
+</html>
