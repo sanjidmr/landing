@@ -87,7 +87,7 @@
     }
 
     .hero-inner {
-      max-width: 1080px;
+      max-width: 1200px;
       margin: 0 auto;
       position: relative;
       z-index: 1;
@@ -108,14 +108,25 @@
       flex-direction: column;
     }
 
+    /* Headline Styling */
     .hero h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(30px, 8.5vw, 56px);
-      font-weight: 600;
+      font-size: clamp(32px, 8vw, 48px);
       line-height: 1.2;
-      color: #000000;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       text-align: center;
+      font-weight: 800;
+      /* Extra Bold */
+    }
+
+    .text-black {
+      color: #000000;
+      font-size: 35px;
+    }
+
+    .text-rose {
+      color: #C2185B;
+      font-size: 35px;
+      font-weight: 800;
     }
 
     @media (min-width: 860px) {
@@ -128,10 +139,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      background: rgba(201, 169, 110, 0.12);
-      border: 1px solid rgba(201, 169, 110, 0.4);
-      color: #8a6520;
+      background: rgba(194, 24, 91, 0.1);
+      border: 1px solid rgba(194, 24, 91, 0.2);
+      color: var(--rose);
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 1.8px;
@@ -148,18 +158,25 @@
       }
     }
 
+    /* Sub-headline Styling */
     .hero-sub {
-      font-size: 23px;
-      color: var(--muted);
-      margin-bottom: 14px;
-      font-weight: 400;
-      line-height: 1.65;
+      font-size: 24px;
+      color: #4B5563;
+      margin-bottom: 20px;
+      line-height: 1.6;
       text-align: center;
+    }
+
+    .sub-bold {
+      font-weight: 700;
+      font-size: 1.1em;
+      color: #1F2937;
     }
 
     @media (min-width: 860px) {
       .hero-sub {
         text-align: left;
+        font-size: 28px;
       }
     }
 
@@ -167,15 +184,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
       background: var(--rose-blush);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 11px 16px;
-      font-size: 13px;
+      font-size: 14px;
       color: var(--rose);
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     @media (min-width: 860px) {
@@ -193,7 +209,6 @@
       box-shadow: var(--shadow-rose);
       margin: 0 auto 24px;
       object-fit: cover;
-      aspect-ratio: 1 / 1;
     }
 
     @media (min-width: 860px) {
@@ -207,8 +222,6 @@
       width: 100%;
       border-radius: 30px;
       box-shadow: var(--shadow-rose);
-      object-fit: cover;
-      aspect-ratio: 1 / 1;
     }
 
     @media (min-width: 860px) {
@@ -221,7 +234,6 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      width: 100%;
     }
 
     @media (min-width: 860px) {
@@ -235,32 +247,38 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
       color: #fff;
-      font-size: 16px;
       font-weight: 700;
-      padding: 15px 28px;
+      padding: 16px 28px;
       border-radius: 60px;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: 0.3s;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--rose) 0%, #a83258 100%);
-      box-shadow: 0 10px 36px rgba(200, 66, 106, 0.4);
+      background: linear-gradient(135deg, var(--rose) 0%, #a81c4c 100%);
+      box-shadow: 0 10px 30px rgba(194, 24, 91, 0.4);
+      font-size: 20px;
     }
 
     .btn-whatsapp {
       background: #25D366;
-      box-shadow: 0 10px 36px rgba(37, 211, 102, 0.3);
+      font-size: 17px;
     }
 
-    .hero-stats {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 28px;
-      padding: 16px 0;
-      border-top: 1px solid var(--border);
+    .hero-footer-text h4 {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #374151;
+      text-align: center;
+    }
+
+    @media (min-width: 860px) {
+      .hero-footer-text h4 {
+        text-align: left;
+        padding-left: 20px;
+      }
     }
 
     .stat-item {
@@ -317,6 +335,20 @@
 
     }
 
+    .pqr {
+      font-size: 25px;
+      margin-left: 10px;
+
+    }
+
+    .pqs {
+      margin-left: 28px;
+      margin-bottom: 29;
+      font-size: 25px;
+
+
+    }
+
     .prob-item {
       display: flex;
       align-items: flex-start;
@@ -342,6 +374,232 @@
       justify-content: center;
       color: #fff;
     }
+   .info-section {
+    padding: 60px 20px;
+    background-color: #f8fafc;
+}
+
+.info-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #ffe4e6;
+    border-radius: 40px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    box-shadow: 0 25px 50px -12px rgba(244, 63, 94, 0.1);
+}
+
+/* মোবাইল রেসপন্সিভ */
+@media (max-width: 991px) {
+    .info-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .info-container {
+        grid-template-columns: 1fr;
+        padding: 30px;
+        border-radius: 30px;
+    }
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+}
+
+.icon-wrapper {
+    background-color: var(--rose-50);
+    color: var(--rose-500);
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 15px -3px rgba(255, 228, 230, 0.5);
+    transition: all 0.3s ease;
+}
+
+.info-box:hover .icon-wrapper {
+    background-color: var(--rose-500);
+    color: #ffffff;
+}
+
+.label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 800;
+    color: var(--slate-500);
+    margin-bottom: 5px;
+}
+
+.value {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--slate-800);
+    margin: 0;
+}
+eita mobile responsive koro mobile e ek row te 2ta kore tar pore eitar html and css ta dau
+Gemini 3 Flash Preview
+Ran for 22s
+lightbulb
+Thought for 22 seconds
+আপনার অনুরোধ অনুযায়ী তথ্য সেকশনটি পুরোপুরি রেসপন্সিভ করে তৈরি করা হয়েছে, যেখানে মোবাইলে প্রতি সারিতে ২টি করে আইটেম থাকবে।
+১. HTML কোড
+এই অংশে এসভিজি (SVG) আইকন ব্যবহার করা হয়েছে, যা ব্রাউজারে দ্রুত লোড হয় এবং দেখতে শার্প লাগে।
+code
+Html
+<section class="info-section">
+    <div class="info-container">
+        <!-- পরিমাণ -->
+        <div class="info-box">
+            <div class="icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+            </div>
+            <span class="label">পরিমাণ</span>
+            <p class="value">125 ml</p>
+        </div>
+
+        <!-- মেয়াদ -->
+        <div class="info-box">
+            <div class="icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+            </div>
+            <span class="label">মেয়াদ</span>
+            <p class="value">খোলার পর ৯ মাস</p>
+        </div>
+
+        <!-- ব্যবহারকারী -->
+        <div class="info-box">
+            <div class="icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <span class="label">ব্যবহারকারী</span>
+            <p class="value">১৮–৫০ বছর</p>
+        </div>
+
+        <!-- ব্যবহারকাল -->
+        <div class="info-box">
+            <div class="icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+            </div>
+            <span class="label">ব্যবহারকাল</span>
+            <p class="value">প্রায় ২৫–৩০ দিন</p>
+        </div>
+    </div>
+</section>
+২. CSS কোড
+এখানে গ্রিড সিস্টেম ব্যবহার করা হয়েছে যাতে মোবাইলে অটোমেটিক ২টি করে কলাম তৈরি হয়।
+code
+CSS
+:root {
+    --rose-bg: #fff1f2;
+    --rose-primary: #f43f5e;
+    --text-slate: #64748b;
+    --text-dark: #1e293b;
+}
+
+.info-section {
+    padding: 40px 15px;
+    background-color: #f8fafc;
+}
+
+.info-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #ffe4e6;
+    border-radius: 30px;
+    padding: 30px 15px;
+    display: grid;
+    /* মোবাইলে ডিফল্ট হিসেবে ২ কলাম */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 10px;
+    box-shadow: 0 15px 35px rgba(244, 63, 94, 0.08);
+}
+
+/* বড় পর্দার জন্য ৪ কলাম (পিসি/ডেস্কটপ) */
+@media (min-width: 992px) {
+    .info-container {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 40px;
+        border-radius: 40px;
+    }
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.icon-wrapper {
+    background-color: var(--rose-bg);
+    color: var(--rose-primary);
+    padding: 12px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* পিসিতে আইকন একটু বড় দেখাবে */
+@media (min-width: 992px) {
+    .icon-wrapper {
+        width: 60px;
+        height: 60px;
+        border-radius: 20px;
+    }
+}
+
+.icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+}
+
+.label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: var(--text-slate);
+    margin-bottom: 4px;
+}
+
+.value {
+    font-size: 15px; /* মোবাইলের জন্য সাইজ */
+    font-weight: 800;
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* পিসিতে টেক্সট সাইজ বড় হবে */
+@media (min-width: 992px) {
+    .value {
+        font-size: 18px;
+    }
+    .label {
+        font-size: 11px;
+    }
+}
 
     /* ── HOW IT WORKS ── */
     .ing-card {
@@ -992,26 +1250,47 @@
     <div class="hero-inner">
       <div class="hero-text">
         <div class="hero-label">DERMA HOUSE · KOREA</div>
-        <h1>আপনি কি আপনার ফিগার নিয়ে সন্তুষ্ট নন?</h1>
-        <p class="hero-sub">ঢিলে ভাব নয়—পান টাইট, ভরাট ও আকর্ষণীয় ফিগার সঠিক কেয়ারে</p>
+
+        <h1>
+          <span class="text-black">আপনি কি </span>
+          <span class="text-rose">ফিগার নিয়ে সন্তুষ্ট নন?</span>
+        </h1>
+
+        <p class="hero-sub">
+          <span class="sub-bold">ঢিলে ভাব নয় পান </span>
+          <span class="text-rose sub-bold">টাইট, ভরাট ও আকর্ষণীয় ফিগার সঠিক কেয়ারে</span>
+        </p>
 
         <div class="hero-badge">ডার্মাটোলজিক্যালি টেস্টেড কোরিয়ান ফর্মুলা</div>
 
         <!-- MOBILE IMAGE -->
-        <img src="images/hero.jpeg" alt="Hero Image" class="hero-img-mobile">
+        <img src="images/hero.jpeg" alt="Hero Image" class="hero-img-mobile" referrerPolicy="no-referrer">
 
         <div class="hero-btns">
           <a href="#order" class="btn-primary">🛒 এখনই অর্ডার করুন</a>
-          <a href="https://wa.me/8801700000000" target="_blank" class="btn-whatsapp">💬 WhatsApp এ অর্ডার করুন</a>
+          <a href="https://wa.me/8801700000000" target="_blank" class="btn-whatsapp">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+              <path d="M8 12h.01"></path>
+              <path d="M12 12h.01"></path>
+              <path d="M16 12h.01"></path>
+            </svg>
+            WhatsApp এ অর্ডার করুন
+          </a>
         </div>
 
-
+        <div class="hero-footer-text">
+          <h4>নিরাপদ প্যাকেজিং ও প্রাইভেসি নিশ্চিত</h4>
+        </div>
 
         <!-- DESKTOP IMAGE -->
         <div class="hero-img-desktop">
-          <img src="images/hero.jpeg" alt="Hero Image" style="width: 100%; border-radius: 30px;">
+          <img src="images/hero.jpeg" alt="Hero Image"
+            style="width: 100%; border-radius: 30px;" referrerPolicy="no-referrer">
         </div>
       </div>
+    </div>
   </section>
 
   <!-- PROBLEM SECTION -->
@@ -1022,22 +1301,31 @@
           <img src="images/problem.jpeg" alt="Problem" style="width: 100%; border-radius: 16px;">
         </div>
         <div>
-          <h2 class="sec-title">আপনার সমস্যার সমাধান</h2>
+          <h2 class="sec-title">এই সমস্যাগুলো কি আপনারও ??</h2>
           <ul class="prob-list">
             <li class="prob-item">
-              <div class="prob-icon">😢</div>নিজের বডি শেপ দেখে মন খারাপ হয়
+              <div class="prob-icon">😢</div>আপনার স্তন কি ঝুলে গেছে বা আগের মতো টানটান নেই?
             </li>
             <li class="prob-item">
-              <div class="prob-icon">👗</div>ড্রেস পরলেও ঠিকমতো শেপ ফুটে ওঠে না
+              <div class="prob-icon">👗</div>স্তনের শেপ কি ঠিকমতো ফুটে উঠছে না?
+
             </li>
             <li class="prob-item">
-              <div class="prob-icon">🪞</div>আয়নায় দাঁড়িয়ে মনে হয়—আগের মতো নেই
+              <div class="prob-icon">🪞</div>স্তন কি আগের মতো ভরাট দেখাচ্ছে না?
+
             </li>
             <li class="prob-item">
-              <div class="prob-icon">💔</div>পছন্দের ড্রেস পরলেও ভালো লাগে না
+              <div class="prob-icon">💔</div>ত্বক কি ঢিলে ও দুর্বল লাগছে?
             </li>
             <li class="prob-item">
-              <div class="prob-icon">🌸</div>মনে হয়—আগের মতো আকর্ষণীয় দেখাচ্ছে না
+              <div class="prob-icon">🌸</div>স্তনের ত্বক কি রুক্ষ, শুষ্ক বা মসৃণ না?
+            </li>
+            <li class="prob-item">
+              <div class="prob-icon">💃</div>পছন্দের ড্রেস পরলেও কি আত্মবিশ্বাস কমে যায়?
+
+            </li>
+            <li class="prob-item">
+              <div class="prob-icon">🤦‍♀️</div>আয়নায় নিজেকে দেখে কি আগের মতো ভালো লাগে না?
             </li>
           </ul>
         </div>
@@ -1070,7 +1358,7 @@
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   </section>
@@ -1082,20 +1370,27 @@
       <div class="product-grid">
         <div class="product-card">
           <img src="images/p1.jpeg" alt="Product 1">
-          <h3>ডারমা হাউজ ব্রেস্ট টাইটেনিং ক্রিম</h3>
+          <h2>টাইট চাই</h2>
+          <h3>Tightening Cream<br>
+            ঝুলে গেলে টাইট করতে</h3>
           <p class="price">১৫০০ টাকা</p>
           <a href="#order" class="btn-primary">অর্ডার করুন</a>
         </div>
         <div class="product-card">
           <img src="images/p2.jpeg" alt="Product 2">
-          <h3>ডারমা হাউস ব্রেস্ট এনলাজমেন্ট ক্রিম</h3>
+          <h2> ভরাট চাই</h2>
+          <h3>Enlargement Cream
+            ছোট হলে ভরাট লুকের জন্য</h3>
           <p class="price">১৫০০ টাকা</p>
           <a href="#order" class="btn-primary">অর্ডার করুন</a>
         </div>
         <div class="product-card" style="border: 2px solid var(--rose);">
           <div class="discount-tag">২০% ডিসকাউন্ট</div>
           <img src="images/p3.jpeg" alt="Combo">
-          <h3>কম্বো প্যাক (২টি ক্রিম)</h3>
+          <h2>কম্বো নিন</h2>
+          <h3>Combo Pack (Best)
+            টাইট + ভরাট দুইটাই
+            ২০% ছাড়</h3>
           <p style="text-decoration: line-through; color: gray;">৩০০০ টাকা</p>
           <p class="price">২৪০০ টাকা</p>
           <p style="font-size: 12px; font-weight: bold;">কম্বো কিনলে ২০% ডিসকাউন্টে ৩০০০ টাকার প্রোডাক্ট ২৪০০ টাকায়
@@ -1104,6 +1399,45 @@
         </div>
       </div>
     </div>
+   <section class="info-section">
+    <div class="info-container">
+        <!-- পরিমাণ -->
+        <div class="info-box">
+            <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+            </div>
+            <span class="label">পরিমাণ</span>
+            <p class="value">125 ml</p>
+        </div>
+
+        <!-- মেয়াদ -->
+        <div class="info-box">
+            <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+            </div>
+            <span class="label">মেয়াদ</span>
+            <p class="value">খোলার পর ৯ মাস</p>
+        </div>
+
+        <!-- বয়স -->
+        <div class="info-box">
+            <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <span class="label">ব্যবহারকারী</span>
+            <p class="value">১৮–৫০ বছর</p>
+        </div>
+
+        <!-- ব্যবহারকাল -->
+        <div class="info-box">
+            <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+            </div>
+            <span class="label">ব্যবহারকাল</span>
+            <p class="value">প্রায় ২৫–৩০ দিন</p>
+        </div>
+    </div>
+</section>
   </section>
 
   <!-- INGREDIENTS SECTION -->
@@ -1113,35 +1447,43 @@
       <div class="ingredients-grid">
         <div class="ingredient-item">
           <img src="images/মিনারেল অয়েল.jpeg" class="ingredient-img">
-          <p>মিনারেল অয়েল</p>
+          <p> Mineral Oil
+            ত্বকের উপর সুরক্ষামূলক স্তর তৈরি করে আর্দ্রতা লক করে রাখে</p>
         </div>
         <div class="ingredient-item">
           <img src="images/ম্যাংগো এক্সট্র্যাক্ট.jpeg" class="ingredient-img">
-          <p>ম্যাংগো এক্সট্র্যাক্ট</p>
+          <p> Mango Extract<br>
+            ত্বকে পুষ্টি জোগায়, ফলে ত্বক প্রাণবন্ত ও স্বাস্থ্যকর দেখায়</p>
         </div>
         <div class="ingredient-item">
           <img src="images/এলোভেরা.jpeg" class="ingredient-img">
-          <p>অ্যালোভেরা এক্সট্র্যাক্ট</p>
+          <p>Aloe Vera Extract<br>
+            ত্বককে কোমল, মসৃণ ও নরম রাখতে সাহায্য করে</p>
         </div>
         <div class="ingredient-item">
           <img src="images/গ্রিনটি এক্সট্রাক্ট.jpeg" class="ingredient-img">
-          <p>গ্রিন টি এক্সট্র্যাক্ট</p>
+          <p> Green Tea Extract<br>
+            অ্যান্টিঅক্সিডেন্ট দিয়ে ত্বককে সতেজ ও ফ্রেশ রাখতে সহায়তা করে</p>
         </div>
         <div class="ingredient-item">
           <img src="images/ক্যালেন্ডুলা .jpeg" class="ingredient-img">
-          <p>ক্যালেন্ডুলা ফুলের নির্যাস</p>
+          <p> Calendula Flower Extract<br>
+            ত্বকের লালভাব ও অস্বস্তি কমিয়ে আরামদায়ক অনুভূতি দেয়</p>
         </div>
         <div class="ingredient-item">
           <img src="images/ভিটামিন ই.jpeg" class="ingredient-img">
-          <p>ভিটামিন ই</p>
+          <p>Vitamin E<br>
+            ঢিলে ভাব কমিয়ে ত্বককে শক্ত ও টানটান রাখতে সহায়তা করে</p>
         </div>
         <div class="ingredient-item">
           <img src="images/ভিটামিন সি.jpeg" class="ingredient-img">
-          <p>ভিটামিন সি</p>
+          <p>Vitamin C<br>
+            আপনার স্তন টাইট ও ভরাট দেখাতে সাহায্য করে, ফলে শেপ সুন্দরভাবে ফুটে ওঠে</p>
         </div>
         <div class="ingredient-item">
           <img src="images/জ্যানথান ঘাম.jpeg" class="ingredient-img">
-          <p>জ্যানথান গাম</p>
+          <p>Xanthan Gum<br>
+            ক্রিমকে মসৃণভাবে ত্বকে বসতে সাহায্য করে, ফলে ব্যবহার সহজ হয়</p>
         </div>
       </div>
     </div>
@@ -1151,6 +1493,9 @@
   <!-- GALLERY SECTION (Above Trust Section) -->
   <section class="gallery-section">
     <div class="container">
+      <div>
+        <h4 class="pqr"><span class="pqs">QR কোড স্ক্যান করে</span> অরিজিনালিটি যাচাই করুন</h4>
+      </div>
       <div class="gallery-grid">
         <!-- Image Card 1 -->
         <div class="gallery-item">
@@ -1162,12 +1507,35 @@
         </div>
         <!-- Image Card 2 -->
         <div class="gallery-item">
-          <img src="images/p2.jpeg" alt="Korean Formula" referrerPolicy="no-referrer">
+          <img src="images/t2.jpeg" alt="Korean Formula" referrerPolicy="no-referrer">
           <div class="gallery-overlay">
             <div class="gallery-badge">Korean</div>
             <p>উন্নত কোরিয়ান ডার্মা ফর্মুলা</p>
           </div>
         </div>
+        <div class="ing-card">
+          <div class="ing-body">
+            <p> ডার্মাটোলজিক্যালি টেস্টেড</p>
+          </div>
+        </div>
+        <div class="ing-card">
+          <div class="ing-body">
+            <p>কোনো সাইড ইফেক্ট
+              নেই</p>
+          </div>
+        </div>
+        <div class="ing-card">
+          <div class="ing-body">
+            <p> অরিজিনাল কোরিয়ান প্রোডাক্ট</p>
+          </div>
+        </div>
+        <div class="ing-card">
+          <div class="ing-body">
+            <p> নিরাপদ প্যাকেজিং ও প্রাইভেসি নিশ্চিত
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1207,10 +1575,10 @@
         <div class="usage-box">
           <h3 class="usage-box-title">🌸 ব্যবহারের নিয়ম</h3>
           <div class="usage-steps">
-            <p>১. প্রথমে ব্রেস্টের চারপাশের ত্বক পরিষ্কার করে শুকিয়ে নিন</p>
-            <p>২. অল্প পরিমাণ ক্রিম নিয়ে ব্রেস্টের চারপাশে লাগান (নিপল এরিয়া এড়িয়ে)</p>
-            <p>৩. নিচ থেকে উপরের দিকে হালকা হাতে ম্যাসাজ করুন</p>
-            <p>৪. দিনে ২ বার ব্যবহার করুন—সকাল ও রাতে</p>
+            <p>১টি ব্যবহারে: কিছু পরিবর্তন অনুভব করবেন</p>
+            <p>২টি ব্যবহারে: আরও দৃশ্যমান পরিবর্তন
+            </p>
+            <p>২–৩ মাসে: ভালো ফলাফল দেখা যায়</p>
           </div>
         </div>
         <div class="usage-box">
