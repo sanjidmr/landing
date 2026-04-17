@@ -29,7 +29,10 @@
       --shadow-card: 0 4px 30px rgba(42, 30, 38, 0.06);
       --font-sans: 'Hind Siliguri', sans-serif;
       --font-serif: 'Cormorant Garamond', serif;
+
     }
+
+
 
     * {
       margin: 0;
@@ -68,15 +71,7 @@
       font-weight: 500;
     }
 
-    @keyframes shimmer {
-      0% {
-        background-position: 0% 50%
-      }
 
-      100% {
-        background-position: 200% 50%
-      }
-    }
 
     /* ── HERO ── */
     .hero {
@@ -242,29 +237,71 @@
       }
     }
 
-    .btn-primary,
-    .btn-whatsapp {
-      display: inline-flex;
+    .button-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      padding: 50px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .order-btn-3d {
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      color: #fff;
-      font-weight: 700;
-      padding: 16px 28px;
+      gap: 15px;
+      width: 280px;
+      padding: 15px 20px;
       border-radius: 60px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--rose) 0%, #a81c4c 100%);
-      box-shadow: 0 10px 30px rgba(194, 24, 91, 0.4);
+      border: none;
       font-size: 20px;
+      font-weight: 800;
+      color: white;
+      cursor: pointer;
+      transition: all 0.1s ease;
+      position: relative;
+      user-select: none;
+      border-top: 3px solid rgba(255, 255, 255, 0.2);
     }
 
-    .btn-whatsapp {
-      background: #25D366;
-      font-size: 17px;
+    /* পিঙ্ক বাটন */
+    .pink-gradient {
+      background: linear-gradient(to bottom, #f34d7a, #d6325a);
+      box-shadow: 0 10px 0 #af2346, 0 15px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    /* গ্রিন বাটন */
+    .green-gradient {
+      background: linear-gradient(to bottom, #8fd34d, #5eac2c);
+      box-shadow: 0 10px 0 #468221, 0 15px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    /* হোভার করলে (Mouse over) */
+    .order-btn-3d:hover {
+      transform: translateY(2px);
+    }
+
+    .pink-gradient:hover {
+      box-shadow: 0 8px 0 #af2346, 0 12px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .green-gradient:hover {
+      box-shadow: 0 8px 0 #468221, 0 12px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ক্লিক করলে (Mouse down / Tap) */
+    .order-btn-3d:active {
+      transform: translateY(8px);
+      box-shadow: 0 2px 0 #af2346;
+    }
+
+    .green-gradient:active {
+      box-shadow: 0 2px 0 #468221;
+    }
+
+    svg {
+      flex-shrink: 0;
     }
 
     .hero-footer-text h4 {
@@ -332,6 +369,8 @@
       gap: 10px;
       margin: 16px 0;
       font: bold;
+      font-size: 40px;
+
 
     }
 
@@ -358,9 +397,9 @@
       border-radius: 14px;
       padding: 13px 15px;
       font: bold;
-      font-size: 20px;
+      /* font-size: 18px; */
       color: var(--charcoal);
-      font-weight: 500;
+      font-weight: 1000;
     }
 
     .prob-icon {
@@ -374,232 +413,178 @@
       justify-content: center;
       color: #fff;
     }
-   .info-section {
-    padding: 60px 20px;
-    background-color: #f8fafc;
-}
 
-.info-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    background: #ffffff;
-    border: 1px solid #ffe4e6;
-    border-radius: 40px;
-    padding: 40px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    box-shadow: 0 25px 50px -12px rgba(244, 63, 94, 0.1);
-}
-
-/* মোবাইল রেসপন্সিভ */
-@media (max-width: 991px) {
-    .info-container {
-        grid-template-columns: repeat(2, 1fr);
+    .info-section {
+      padding: 60px 20px;
+      background-color: #f8fafc;
     }
-}
 
-@media (max-width: 576px) {
     .info-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #ffe4e6;
+      border-radius: 40px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      box-shadow: 0 25px 50px -12px rgba(244, 63, 94, 0.1);
+    }
+
+    /* মোবাইল রেসপন্সিভ */
+    @media (max-width: 991px) {
+      .info-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .info-container {
         grid-template-columns: 1fr;
         padding: 30px;
         border-radius: 30px;
+      }
     }
-}
 
-.info-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
+    .info-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
 
-.info-box:hover {
-    transform: translateY(-5px);
-}
+    .info-box:hover {
+      transform: translateY(-5px);
+    }
 
-.icon-wrapper {
-    background-color: var(--rose-50);
-    color: var(--rose-500);
-    padding: 15px;
-    border-radius: 20px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 15px -3px rgba(255, 228, 230, 0.5);
-    transition: all 0.3s ease;
-}
+    .icon-wrapper {
+      background-color: var(--rose-50);
+      color: var(--rose-500);
+      padding: 15px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 15px -3px rgba(255, 228, 230, 0.5);
+      transition: all 0.3s ease;
+    }
 
-.info-box:hover .icon-wrapper {
-    background-color: var(--rose-500);
-    color: #ffffff;
-}
+    .info-box:hover .icon-wrapper {
+      background-color: var(--rose-500);
+      color: #ffffff;
+    }
 
-.label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 800;
-    color: var(--slate-500);
-    margin-bottom: 5px;
-}
+    .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+      color: var(--slate-500);
+      margin-bottom: 5px;
+    }
 
-.value {
-    font-size: 18px;
-    font-weight: 800;
-    color: var(--slate-800);
-    margin: 0;
-}
-eita mobile responsive koro mobile e ek row te 2ta kore tar pore eitar html and css ta dau
-Gemini 3 Flash Preview
-Ran for 22s
-lightbulb
-Thought for 22 seconds
-আপনার অনুরোধ অনুযায়ী তথ্য সেকশনটি পুরোপুরি রেসপন্সিভ করে তৈরি করা হয়েছে, যেখানে মোবাইলে প্রতি সারিতে ২টি করে আইটেম থাকবে।
-১. HTML কোড
-এই অংশে এসভিজি (SVG) আইকন ব্যবহার করা হয়েছে, যা ব্রাউজারে দ্রুত লোড হয় এবং দেখতে শার্প লাগে।
-code
-Html
-<section class="info-section">
-    <div class="info-container">
-        <!-- পরিমাণ -->
-        <div class="info-box">
-            <div class="icon-wrapper">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
-            </div>
-            <span class="label">পরিমাণ</span>
-            <p class="value">125 ml</p>
-        </div>
+    .value {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--slate-800);
+      margin: 0;
+    }
 
-        <!-- মেয়াদ -->
-        <div class="info-box">
-            <div class="icon-wrapper">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
-            </div>
-            <span class="label">মেয়াদ</span>
-            <p class="value">খোলার পর ৯ মাস</p>
-        </div>
 
-        <!-- ব্যবহারকারী -->
-        <div class="info-box">
-            <div class="icon-wrapper">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            </div>
-            <span class="label">ব্যবহারকারী</span>
-            <p class="value">১৮–৫০ বছর</p>
-        </div>
 
-        <!-- ব্যবহারকাল -->
-        <div class="info-box">
-            <div class="icon-wrapper">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
-            </div>
-            <span class="label">ব্যবহারকাল</span>
-            <p class="value">প্রায় ২৫–৩০ দিন</p>
-        </div>
-    </div>
-</section>
-২. CSS কোড
-এখানে গ্রিড সিস্টেম ব্যবহার করা হয়েছে যাতে মোবাইলে অটোমেটিক ২টি করে কলাম তৈরি হয়।
-code
-CSS
-:root {
-    --rose-bg: #fff1f2;
-    --rose-primary: #f43f5e;
-    --text-slate: #64748b;
-    --text-dark: #1e293b;
-}
+    .info-section {
+      padding: 40px 15px;
+      background-color: #f8fafc;
+    }
 
-.info-section {
-    padding: 40px 15px;
-    background-color: #f8fafc;
-}
-
-.info-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    background: #ffffff;
-    border: 1px solid #ffe4e6;
-    border-radius: 30px;
-    padding: 30px 15px;
-    display: grid;
-    /* মোবাইলে ডিফল্ট হিসেবে ২ কলাম */
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px 10px;
-    box-shadow: 0 15px 35px rgba(244, 63, 94, 0.08);
-}
-
-/* বড় পর্দার জন্য ৪ কলাম (পিসি/ডেস্কটপ) */
-@media (min-width: 992px) {
     .info-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #ffe4e6;
+      border-radius: 30px;
+      padding: 30px 15px;
+      display: grid;
+      /* মোবাইলে ডিফল্ট হিসেবে ২ কলাম */
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px 10px;
+      box-shadow: 0 15px 35px rgba(244, 63, 94, 0.08);
+    }
+
+    /* বড় পর্দার জন্য ৪ কলাম (পিসি/ডেস্কটপ) */
+    @media (min-width: 992px) {
+      .info-container {
         grid-template-columns: repeat(4, 1fr);
         padding: 40px;
         border-radius: 40px;
+      }
     }
-}
 
-.info-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
+    .info-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
 
-.icon-wrapper {
-    background-color: var(--rose-bg);
-    color: var(--rose-primary);
-    padding: 12px;
-    border-radius: 16px;
-    margin-bottom: 12px;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* পিসিতে আইকন একটু বড় দেখাবে */
-@media (min-width: 992px) {
     .icon-wrapper {
+      background-color: var(--rose-bg);
+      color: var(--rose-primary);
+      padding: 12px;
+      border-radius: 16px;
+      margin-bottom: 12px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* পিসিতে আইকন একটু বড় দেখাবে */
+    @media (min-width: 992px) {
+      .icon-wrapper {
         width: 60px;
         height: 60px;
         border-radius: 20px;
+      }
     }
-}
 
-.icon-wrapper svg {
-    width: 24px;
-    height: 24px;
-}
-
-.label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    color: var(--text-slate);
-    margin-bottom: 4px;
-}
-
-.value {
-    font-size: 15px; /* মোবাইলের জন্য সাইজ */
-    font-weight: 800;
-    color: var(--text-dark);
-    margin: 0;
-    line-height: 1.2;
-}
-
-/* পিসিতে টেক্সট সাইজ বড় হবে */
-@media (min-width: 992px) {
-    .value {
-        font-size: 18px;
+    .icon-wrapper svg {
+      width: 24px;
+      height: 24px;
     }
+
     .label {
-        font-size: 11px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: var(--text-slate);
+      margin-bottom: 4px;
     }
-}
+
+    .value {
+      font-size: 15px;
+      /* মোবাইলের জন্য সাইজ */
+      font-weight: 800;
+      color: var(--text-dark);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    /* পিসিতে টেক্সট সাইজ বড় হবে */
+    @media (min-width: 992px) {
+      .value {
+        font-size: 18px;
+      }
+
+      .label {
+        font-size: 11px;
+      }
+    }
 
     /* ── HOW IT WORKS ── */
     .ing-card {
@@ -681,16 +666,316 @@ CSS
       margin-bottom: 16px;
     }
 
-    .product-card .discount-tag {
-      background: #ff4d4d;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 50px;
-      display: inline-block;
-      margin-bottom: 8px;
+    .product-card {
+      border: 2px solid var(--rose);
+      border-radius: 12px;
+      padding: 20px;
+      width: 300px;
+      position: relative;
+      /* Imortant for floating banner */
+      text-align: center;
+      overflow: visible;
+      /* Allows banner to float outside */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      background: #fff;
     }
+
+    /* প্রোডাক্ট কার্ডের মেইন সেটআপ */
+    .product-card {
+      position: relative;
+      /* ব্যানারের পজিশনের জন্য দরকার */
+      border: 2px solid #e11d48;
+      /* আপনার var(--rose) এর রিপ্লেসমেন্ট */
+      border-radius: 20px;
+      padding: 20px;
+      margin-top: 50px;
+      /* ব্যানারের জায়গার জন্য ওপরে একটু মার্জিন */
+      text-align: center;
+      background: #fff;
+      overflow: visible;
+      /* ব্যানারটি যাতে কার্ডের ওপরে ভেসে থাকতে পারে */
+    }
+
+    /* ব্যানারটিকে কার্ডের উপরে মাঝখানে পজিশন করার মেথড */
+    .ribbon-card-overlay {
+      position: absolute;
+      top: -35px;
+      /* ওপরে কতটুকু ভেসে থাকবে */
+      left: 50%;
+      transform: translateX(-50%) scale(0.65);
+      /* মাঝখানে রাখা ও সাইজ ছোট করা */
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    /* ৩ডি রিবন ডিজাইন CSS */
+    .ribbon-wrapper {
+      position: relative;
+      transform: skewX(-12deg);
+      font-family: 'Arial Black', sans-serif;
+    }
+
+    .ribbon-fold-top {
+      position: absolute;
+      top: -10px;
+      left: 15px;
+      width: 70%;
+      height: 30px;
+      background-color: #7c1837;
+      z-index: -1;
+    }
+
+    .ribbon-main {
+      background-color: #a11f46;
+      padding: 30px 50px;
+      border-radius: 4px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .ribbon-text-discount {
+      color: white;
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-style: italic;
+      margin-bottom: -5px;
+    }
+
+    .ribbon-number-group {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .ribbon-number {
+      color: white;
+      font-size: 55px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .ribbon-percent {
+      color: white;
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .ribbon-off-tag {
+      position: absolute;
+      bottom: -10px;
+      right: -15px;
+      background-color: #7c1837;
+      padding: 3px 12px;
+      transform: skewX(18deg);
+    }
+
+    .ribbon-off-tag span {
+      color: white;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 900;
+    }
+
+    /* এক্সেন্ট ডিজাইন */
+    .ribbon-accents {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .ribbon-accents.left {
+      left: -45px;
+    }
+
+    .ribbon-accents.right {
+      right: -45px;
+    }
+
+    .acc-line {
+      height: 4px;
+      width: 25px;
+      background-color: #a11f46;
+      border-radius: 10px;
+    }
+
+    .acc-line.long {
+      width: 35px;
+    }
+
+    .ribbon-accents.left .acc-line:nth-child(1) {
+      transform: rotate(-45deg);
+    }
+
+    .ribbon-accents.left .acc-line:nth-child(3) {
+      transform: rotate(45deg);
+    }
+
+    .ribbon-accents.right .acc-line:nth-child(1) {
+      transform: rotate(45deg);
+    }
+
+    .ribbon-accents.right .acc-line:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+
+    /* মোবাইল রেসপন্সিভ ডিজাইন */
+    @media (max-width: 480px) {
+      .ribbon-card-overlay {
+        transform: translateX(-50%) scale(0.5);
+        /* মোবাইলে আরও একটু ছোট হবে */
+        top: px;
+      }
+
+      .product-card {
+        padding: 15px;
+      }
+    }
+
+    /* আপনার কার্ডের অন্যান্য টেক্সট স্টাইল */
+    .product-card img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: gray;
+      margin-bottom: 5px;
+    }
+
+    .price {
+      color: #a11f46;
+      font-size: 22px;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: #e11d48;
+      color: #fff;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .off-text {
+      font-size: 10px;
+      font-weight: bold;
+      opacity: 0.9;
+    }
+
+    /* Spark effects from image_0.png */
+    .sparks-left,
+    .sparks-right {
+      position: absolute;
+      font-size: 18px;
+      color: #cc3363;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.7;
+    }
+
+    .sparks-left {
+      left: -30px;
+    }
+
+    .sparks-right {
+      right: -30px;
+    }
+
+    /* Banner Hover Effect */
+    .product-card:hover .iconic-banner {
+      transform: skew(-10deg) scale(1.1);
+      box-shadow: 0 0 20px rgba(204, 51, 99, 0.6);
+    }
+
+    /* --- Other Product Card Contents (Based on your code) --- */
+    .mt-24 {
+      margin-top: 24px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-slate-400 {
+      color: var(--slate-400);
+    }
+
+    .text-sm {
+      font-size: 12px;
+    }
+
+    .bg-slate-200 {
+      background-color: var(--slate-200);
+    }
+
+    .px-1 {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+
+    .rounded {
+      border-radius: 4px;
+    }
+
+    .text-slate-600 {
+      color: var(--slate-600);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
+    .product-card h2 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .product-card h3 {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    .product-card p.price {
+      font-size: 22px;
+      font-weight: 900;
+      color: #000;
+      margin: 5px 0;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--rose);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #900;
+    }
+
+
 
     /* ── INGREDIENTS ── */
     .ingredients-grid {
@@ -835,6 +1120,64 @@ CSS
       line-height: 1.5;
     }
 
+    .delivery-banner {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #f9f9f9;
+      /* হালকা ব্যাকগ্রাউন্ড */
+      padding: 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      font-family: 'Hind Siliguri', sans-serif;
+      /* বাংলা ফন্ট */
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .delivery-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .delivery-item p {
+      margin: 0;
+      font-size: 28px;
+      font: bold;
+      color: #333;
+      line-height: 1.5;
+    }
+
+
+
+    .divider {
+      width: 2px;
+      height: 50px;
+      background-color: #ddd;
+      margin: 0 20px;
+    }
+
+    /* মোবাইলের জন্য রেসপন্সিভ ডিজাইন */
+    @media (max-width: 600px) {
+      .delivery-banner {
+        flex-direction: column;
+      }
+
+      .divider {
+        width: 80%;
+        height: 2px;
+        margin: 20px 0;
+      }
+    }
+
     /* Usage Section Styles */
     .usage-section {
       background-color: #fefaf8;
@@ -865,7 +1208,7 @@ CSS
     }
 
     .usage-box-title {
-      font-size: 20px;
+      font-size: 30px;
       font-weight: 700;
       color: #c8426a;
       margin-bottom: 20px;
@@ -873,9 +1216,11 @@ CSS
     }
 
     .usage-steps p {
-      font-size: 14px;
+      font-size: 22px;
+      font:bold;
+      font-weight: 700;
       line-height: 2.2;
-      color: #333;
+      color: black;
       margin-bottom: 5px;
     }
 
@@ -1233,7 +1578,7 @@ CSS
       padding: 12px;
       border-radius: 12px;
       margin-bottom: 10px;
-      font-size: 14px;
+      font-size: 18px;
     }
   </style>
 </head>
@@ -1266,19 +1611,30 @@ CSS
         <!-- MOBILE IMAGE -->
         <img src="images/hero.jpeg" alt="Hero Image" class="hero-img-mobile" referrerPolicy="no-referrer">
 
-        <div class="hero-btns">
-          <a href="#order" class="btn-primary">🛒 এখনই অর্ডার করুন</a>
-          <a href="https://wa.me/8801700000000" target="_blank" class="btn-whatsapp">
-            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
-              <path d="M8 12h.01"></path>
-              <path d="M12 12h.01"></path>
-              <path d="M16 12h.01"></path>
+        <div class="button-wrapper">
+
+          <!-- পিঙ্ক বাটন -->
+          <button class="order-btn-3d pink-gradient">
+            <!-- <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round"> -->
+            <!-- <circle cx="8" cy="21" r="1" />
+              <circle cx="19" cy="21" r="1" /> -->
+            <!-- <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" /> -->
+            </svg>
+            🛒এখনি অর্ডার করুন
+          </button>
+
+          <!-- হোয়াটসঅ্যাপ বাটন -->
+          <button class="order-btn-3d green-gradient">
+            <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.03 0C5.439 0 .01 5.432.006 12.023c0 2.11.544 4.17 1.577 6.02L0 24l6.132-1.61c1.787.974 3.793 1.488 5.842 1.489h.005c6.59 0 12.025-5.432 12.025-12.023 0-3.192-1.242-6.194-3.483-8.441z" />
             </svg>
             WhatsApp এ অর্ডার করুন
-          </a>
+          </button>
+
         </div>
+
 
         <div class="hero-footer-text">
           <h4>নিরাপদ প্যাকেজিং ও প্রাইভেসি নিশ্চিত</h4>
@@ -1286,8 +1642,8 @@ CSS
 
         <!-- DESKTOP IMAGE -->
         <div class="hero-img-desktop">
-          <img src="images/hero.jpeg" alt="Hero Image"
-            style="width: 100%; border-radius: 30px;" referrerPolicy="no-referrer">
+          <img src="images/hero.jpeg" alt="Hero Image" style="width: 100%; border-radius: 30px;"
+            referrerPolicy="no-referrer">
         </div>
       </div>
     </div>
@@ -1339,28 +1695,51 @@ CSS
       <div class="flex-row-desktop">
         <div style="order: 2;">
           <h2 class="sec-title">এই ক্রিমটি কীভাবে কাজ করে?</h2>
-          <div class="ing-card">
-            <div class="ing-num">১</div>
-            <div class="ing-body">
-              <p>অ্যালোভেরা ও ভিটামিন E ত্বক টানটান ও ভরাট রাখতে সাহায্য করে, ঢিলে ভাব কমায়</p>
+          <div class="ingredients-grid">
+            <div class="ingredient-item">
+              <img src="images/মিনারেল অয়েল.jpeg" class="ingredient-img">
+              <p> Mineral Oil
+                ত্বকের উপর সুরক্ষামূলক স্তর তৈরি করে আর্দ্রতা লক করে রাখে</p>
+            </div>
+            <div class="ingredient-item">
+              <img src="images/ম্যাংগো এক্সট্র্যাক্ট.jpeg" class="ingredient-img">
+              <p> Mango Extract<br>
+                ত্বকে পুষ্টি জোগায়, ফলে ত্বক প্রাণবন্ত ও স্বাস্থ্যকর দেখায়</p>
+            </div>
+            <div class="ingredient-item">
+              <img src="images/এলোভেরা.jpeg" class="ingredient-img">
+              <p>Aloe Vera Extract<br>
+                ত্বককে কোমল, মসৃণ ও নরম রাখতে সাহায্য করে</p>
+            </div>
+            <div class="ingredient-item">
+              <img src="images/গ্রিনটি এক্সট্রাক্ট.jpeg" class="ingredient-img">
+              <p> Green Tea Extract<br>
+                অ্যান্টিঅক্সিডেন্ট দিয়ে ত্বককে সতেজ ও ফ্রেশ রাখতে সহায়তা করে</p>
+            </div>
+            <div class="ingredient-item">
+              <img src="images/ক্যালেন্ডুলা .jpeg" class="ingredient-img">
+              <p> Calendula Flower Extract<br>
+                ত্বকের লালভাব ও অস্বস্তি কমিয়ে আরামদায়ক অনুভূতি দেয়</p>
+            </div>
+            <div class="ingredient-item">
+              <img src="images/ভিটামিন ই.jpeg" class="ingredient-img">
+              <p>Vitamin E<br>
+                ঢিলে ভাব কমিয়ে ত্বককে শক্ত ও টানটান রাখতে সহায়তা করে</p>
+            </div>
+            <div class="ingredient-item">
+              <img src="images/ভিটামিন সি.jpeg" class="ingredient-img">
+              <p>Vitamin C<br>
+                আপনার স্তন টাইট ও ভরাট দেখাতে সাহায্য করে, ফলে শেপ সুন্দরভাবে ফুটে ওঠে</p>
+            </div>
+            <div class="ingredient-item">
+              <img src="images/জ্যানথান ঘাম.jpeg" class="ingredient-img">
+              <p>Xanthan Gum<br>
+                ক্রিমকে মসৃণভাবে ত্বকে বসতে সাহায্য করে, ফলে ব্যবহার সহজ হয়</p>
             </div>
           </div>
-          <div class="ing-card">
-            <div class="ing-num">২</div>
-            <div class="ing-body">
-              <p>গ্রিন টি ও ক্যালেন্ডুলা ত্বককে নরম, সতেজ ও মসৃণ রাখে</p>
-            </div>
-          </div>
-          <div class="ing-card">
-            <div class="ing-num">৩</div>
-            <div class="ing-body">
-              <p>ভিটামিন C কমপ্লেক্স ত্বকের গঠন ঠিক করে, শেপ সুন্দরভাবে ফুটিয়ে তোলে</p>
-            </div>
-          </div>
-        </div>
 
+        </div>
       </div>
-    </div>
   </section>
 
   <!-- PRODUCT SECTION -->
@@ -1384,110 +1763,109 @@ CSS
           <p class="price">১৫০০ টাকা</p>
           <a href="#order" class="btn-primary">অর্ডার করুন</a>
         </div>
-        <div class="product-card" style="border: 2px solid var(--rose);">
-          <div class="discount-tag">২০% ডিসকাউন্ট</div>
+        <div class="product-card">
+          <!-- ডিসকাউন্ট ব্যানার (Top Center Positioning) -->
+          <div class="ribbon-card-overlay">
+            <div class="ribbon-wrapper">
+              <div class="ribbon-fold-top"></div>
+              <div class="ribbon-main">
+                <span class="ribbon-text-discount">DISCOUNT</span>
+                <div class="ribbon-number-group">
+                  <span class="ribbon-number">20</span>
+                  <span class="ribbon-percent">%</span>
+                </div>
+                <div class="ribbon-off-tag">
+                  <span>OFF</span>
+                </div>
+              </div>
+              <!-- সাইড মার্কস -->
+              <div class="ribbon-accents left">
+                <div class="acc-line"></div>
+                <div class="acc-line long"></div>
+                <div class="acc-line"></div>
+              </div>
+              <div class="ribbon-accents right">
+                <div class="acc-line"></div>
+                <div class="acc-line long"></div>
+                <div class="acc-line"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- প্রোডাক্ট ইমেজ ও রিটেইল -->
           <img src="images/p3.jpeg" alt="Combo">
-          <h2>কম্বো নিন</h2>
-          <h3>Combo Pack (Best)
-            টাইট + ভরাট দুইটাই
-            ২০% ছাড়</h3>
-          <p style="text-decoration: line-through; color: gray;">৩০০০ টাকা</p>
-          <p class="price">২৪০০ টাকা</p>
-          <p style="font-size: 12px; font-weight: bold;">কম্বো কিনলে ২০% ডিসকাউন্টে ৩০০০ টাকার প্রোডাক্ট ২৪০০ টাকায়
-            পাচ্ছেন</p>
-          <a href="#order" class="btn-primary" style="margin-top: 10px;">কম্বো অর্ডার করুন</a>
+          <div class="card-content">
+            <h2>কম্বো নিন</h2>
+            <h3>Combo Pack (Best) টাইট + ভরাট দুইটাই ২০% ছাড়</h3>
+            <p class="old-price">৩০০০ টাকা</p>
+            <p class="price">২৪০০ টাকা</p>
+            <p class="promo-text">কম্বো কিনলে ২০% ডিসকাউন্টে ৩০০০ টাকার প্রোডাক্ট ২৪০০ টাকায় পাচ্ছেন</p>
+            <a href="#order" class="btn-primary">কম্বো অর্ডার করুন</a>
+          </div>
         </div>
-      </div>
-    </div>
-   <section class="info-section">
-    <div class="info-container">
-        <!-- পরিমাণ -->
-        <div class="info-box">
-            <div class="icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+        <section class="info-section">
+          <div class="info-container">
+            <!-- পরিমাণ -->
+            <div class="info-box">
+              <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+                  </path>
+                  <path d="m3.3 7 8.7 5 8.7-5"></path>
+                  <path d="M12 22V12"></path>
+                </svg>
+              </div>
+              <span class="label">পরিমাণ</span>
+              <p class="value">125 ml</p>
             </div>
-            <span class="label">পরিমাণ</span>
-            <p class="value">125 ml</p>
-        </div>
 
-        <!-- মেয়াদ -->
-        <div class="info-box">
-            <div class="icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+            <!-- মেয়াদ -->
+            <div class="info-box">
+              <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                  <line x1="16" x2="16" y1="2" y2="6"></line>
+                  <line x1="8" x2="8" y1="2" y2="6"></line>
+                  <line x1="3" x2="21" y1="10" y2="10"></line>
+                </svg>
+              </div>
+              <span class="label">মেয়াদ</span>
+              <p class="value">খোলার পর ৯ মাস</p>
             </div>
-            <span class="label">মেয়াদ</span>
-            <p class="value">খোলার পর ৯ মাস</p>
-        </div>
 
-        <!-- বয়স -->
-        <div class="info-box">
-            <div class="icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <!-- বয়স -->
+            <div class="info-box">
+              <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <span class="label">ব্যবহারকারী</span>
+              <p class="value">১৮–৫০ বছর</p>
             </div>
-            <span class="label">ব্যবহারকারী</span>
-            <p class="value">১৮–৫০ বছর</p>
-        </div>
 
-        <!-- ব্যবহারকাল -->
-        <div class="info-box">
-            <div class="icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+            <!-- ব্যবহারকাল -->
+            <div class="info-box">
+              <div class="icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                </svg>
+              </div>
+              <span class="label">ব্যবহারকাল</span>
+              <p class="value">প্রায় ২৫–৩০ দিন</p>
             </div>
-            <span class="label">ব্যবহারকাল</span>
-            <p class="value">প্রায় ২৫–৩০ দিন</p>
-        </div>
-    </div>
-</section>
+          </div>
+        </section>
   </section>
 
   <!-- INGREDIENTS SECTION -->
-  <section style="background: #fefaf8;">
-    <div class="container">
-      <h2 class="sec-title center-desktop">মূল উপাদান সমূহ</h2>
-      <div class="ingredients-grid">
-        <div class="ingredient-item">
-          <img src="images/মিনারেল অয়েল.jpeg" class="ingredient-img">
-          <p> Mineral Oil
-            ত্বকের উপর সুরক্ষামূলক স্তর তৈরি করে আর্দ্রতা লক করে রাখে</p>
-        </div>
-        <div class="ingredient-item">
-          <img src="images/ম্যাংগো এক্সট্র্যাক্ট.jpeg" class="ingredient-img">
-          <p> Mango Extract<br>
-            ত্বকে পুষ্টি জোগায়, ফলে ত্বক প্রাণবন্ত ও স্বাস্থ্যকর দেখায়</p>
-        </div>
-        <div class="ingredient-item">
-          <img src="images/এলোভেরা.jpeg" class="ingredient-img">
-          <p>Aloe Vera Extract<br>
-            ত্বককে কোমল, মসৃণ ও নরম রাখতে সাহায্য করে</p>
-        </div>
-        <div class="ingredient-item">
-          <img src="images/গ্রিনটি এক্সট্রাক্ট.jpeg" class="ingredient-img">
-          <p> Green Tea Extract<br>
-            অ্যান্টিঅক্সিডেন্ট দিয়ে ত্বককে সতেজ ও ফ্রেশ রাখতে সহায়তা করে</p>
-        </div>
-        <div class="ingredient-item">
-          <img src="images/ক্যালেন্ডুলা .jpeg" class="ingredient-img">
-          <p> Calendula Flower Extract<br>
-            ত্বকের লালভাব ও অস্বস্তি কমিয়ে আরামদায়ক অনুভূতি দেয়</p>
-        </div>
-        <div class="ingredient-item">
-          <img src="images/ভিটামিন ই.jpeg" class="ingredient-img">
-          <p>Vitamin E<br>
-            ঢিলে ভাব কমিয়ে ত্বককে শক্ত ও টানটান রাখতে সহায়তা করে</p>
-        </div>
-        <div class="ingredient-item">
-          <img src="images/ভিটামিন সি.jpeg" class="ingredient-img">
-          <p>Vitamin C<br>
-            আপনার স্তন টাইট ও ভরাট দেখাতে সাহায্য করে, ফলে শেপ সুন্দরভাবে ফুটে ওঠে</p>
-        </div>
-        <div class="ingredient-item">
-          <img src="images/জ্যানথান ঘাম.jpeg" class="ingredient-img">
-          <p>Xanthan Gum<br>
-            ক্রিমকে মসৃণভাবে ত্বকে বসতে সাহায্য করে, ফলে ব্যবহার সহজ হয়</p>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- কেন আমাদের ওপর ভরসা করবেন? -->
   <!-- GALLERY SECTION (Above Trust Section) -->
@@ -1578,7 +1956,9 @@ CSS
             <p>১টি ব্যবহারে: কিছু পরিবর্তন অনুভব করবেন</p>
             <p>২টি ব্যবহারে: আরও দৃশ্যমান পরিবর্তন
             </p>
-            <p>২–৩ মাসে: ভালো ফলাফল দেখা যায়</p>
+            <p>১টি ক্রিম = ১ মাসের ব্যবহার
+              পূর্ণ ফলাফলের জন্য
+              ৩ মাস নিয়মিত ব্যবহার করুন</p>
           </div>
         </div>
         <div class="usage-box">
@@ -1608,6 +1988,18 @@ CSS
       </div>
     </div>
   </section>
+
+  <div class="delivery-banner">
+    <div class="delivery-item">
+      <div class="icon">🚚</div>
+      <p><strong>সারা বাংলাদেশে হোম ডেলিভারি সম্পূর্ণ ফ্রি</strong></p>
+    </div>
+    <div class="divider"></div>
+    <div class="delivery-item">
+      <div class="icon">🔒</div>
+      <p><strong><strong>সম্পূর্ণ গোপনীয়তা</strong> রক্ষা করা হয়</p>
+    </div>
+  </div>
 
   <!-- ORDER SECTION -->
   <section id="order" class="order-sec">
