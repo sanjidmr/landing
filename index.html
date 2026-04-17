@@ -78,7 +78,7 @@
       background: var(--ivory);
       position: relative;
       overflow: hidden;
-      padding: 32px 18px 0;
+      padding: 20px 18px 10px;
     }
 
     .hero-inner {
@@ -242,7 +242,7 @@
       flex-direction: column;
       gap: 30px;
       align-items: center;
-      padding: 50px;
+      padding: 10px;
       font-family: 'Inter', sans-serif;
     }
 
@@ -338,7 +338,7 @@
 
     /* ── SHARED SECTION ── */
     section {
-      padding: 48px 0;
+      padding: 20px 0;
     }
 
     .sec-title {
@@ -367,7 +367,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin: 16px 0;
+      /* margin: 16px 0; */
       font: bold;
       font-size: 40px;
 
@@ -382,7 +382,7 @@
 
     .pqs {
       margin-left: 28px;
-      margin-bottom: 29;
+      /* margin-bottom: 29; */
       font-size: 25px;
 
 
@@ -415,7 +415,7 @@
     }
 
     .info-section {
-      padding: 60px 20px;
+      padding: 30px 15px;
       background-color: #f8fafc;
     }
 
@@ -442,7 +442,7 @@
     @media (max-width: 576px) {
       .info-container {
         grid-template-columns: 1fr;
-        padding: 30px;
+        padding: 10px;
         border-radius: 30px;
       }
     }
@@ -464,7 +464,7 @@
       color: var(--rose-500);
       padding: 15px;
       border-radius: 20px;
-      margin-bottom: 15px;
+      /* margin-bottom: 10px; */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -496,7 +496,7 @@
 
 
     .info-section {
-      padding: 40px 15px;
+      padding: 20px 15px;
       background-color: #f8fafc;
     }
 
@@ -590,12 +590,12 @@
     .ing-card {
       display: flex;
       align-items: center;
-      gap: 14px;
+      /* gap: 14px; */
       background: #fff;
       border-radius: 16px;
       padding: 15px 16px;
       box-shadow: var(--shadow-card);
-      margin-bottom: 12px;
+      /* margin-bottom: 12px; */
     }
 
     .ing-num {
@@ -623,7 +623,7 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 24px;
-      margin-top: 32px;
+      margin-top: 12px;
     }
 
     @media (min-width: 768px) {
@@ -688,7 +688,7 @@
       /* আপনার var(--rose) এর রিপ্লেসমেন্ট */
       border-radius: 20px;
       padding: 20px;
-      margin-top: 50px;
+      margin-top: 10px;
       /* ব্যানারের জায়গার জন্য ওপরে একটু মার্জিন */
       text-align: center;
       background: #fff;
@@ -864,6 +864,7 @@
       border-radius: 10px;
       font-weight: bold;
     }
+
 
     .off-text {
       font-size: 10px;
@@ -1058,13 +1059,13 @@
 
     /* Common Styles */
     .container {
-      max-width: 1080px;
+      /* max-width: 1080px; */
       margin: 0 auto;
-      padding: 0 18px;
+      /* padding: 0 18px; */
     }
 
     section {
-      padding: 50px 0;
+      /* padding: 50px 0; */
     }
 
     .section-title {
@@ -1073,7 +1074,7 @@
       font-weight: 700;
       color: #000;
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
     }
 
     /* Trust Section Styles */
@@ -1132,7 +1133,7 @@
       font-family: 'Hind Siliguri', sans-serif;
       /* বাংলা ফন্ট */
       max-width: 800px;
-      margin: 20px auto;
+      margin: 10px auto;
       text-align: center;
     }
 
@@ -1217,7 +1218,7 @@
 
     .usage-steps p {
       font-size: 22px;
-      font:bold;
+      font: bold;
       font-weight: 700;
       line-height: 2.2;
       color: black;
@@ -1411,7 +1412,7 @@
 
     .order-sec {
       background: linear-gradient(145deg, var(--charcoal) 0%, #3d1830 50%, #2a1228 100%);
-      padding: 60px 18px;
+      padding: 30px 18px;
       color: #fff;
       position: relative;
       overflow: hidden;
@@ -1580,6 +1581,23 @@
       margin-bottom: 10px;
       font-size: 18px;
     }
+
+    .discount {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      background: linear-gradient(135deg, var(--rose) 0%, #a83258 100%);
+      color: #fff !important;
+      font-size: 25px !important;
+      font-weight: 900;
+      padding: 10px 40px;
+      border-radius: 60px;
+      text-decoration: none;
+      box-shadow: 0 15px 40px rgba(200, 66, 106, 0.5);
+      transition: all 0.3s;
+      width: 100%;
+    }
   </style>
 </head>
 
@@ -1744,8 +1762,44 @@
 
   <!-- PRODUCT SECTION -->
   <section style="background: white;">
+    <h2 class="sec-title center-desktop">আমাদের প্রোডাক্ট সমূহ</h2>
+
+    <div class="product-card">
+      <!-- ডিসকাউন্ট ব্যানার (Top Center Positioning) -->
+
+      <div>
+        <h2 class="discount">20% discount</h2>
+      </div>
+      <img src="images/p3.jpeg" alt="Combo Pack" style="margin-bottom: 5px;">
+      <div class="card-content" style="padding: 10px;">
+        <h2 style="margin: 0; font-size: 20px;">কম্বো প্যাক</h2>
+        <h3 style="margin: 0; color: #ff0000; font-size: 18px;">২০% ছাড়ে</h3>
+
+        <p style="margin: 5px 0; font-weight: bold; font-size: 14px;">
+          ঢিলে + ছোট – দুই সমস্যার Complete Solution
+        </p>
+
+        <div style="margin: 5px 0; font-size: 14px; line-height: 1.2;">
+          <span>✔ একটি টাইট করে</span><br>
+          <span>✔ একটি সাইজ বাড়াতে সাহায্য করে</span>
+        </div>
+
+        <div style="margin: 5px 0;">
+          <span class="old-price" style="text-decoration: line-through; color: gray; font-size: 14px;">৩০০০ টাকা</span>
+          <span class="price" style="font-size: 18px; font-weight: bold; color: #27ae60; margin-left: 10px;">২৪০০
+            টাকা</span>
+        </div>
+
+        <p style="margin: 5px 0; font-size: 13px; font-weight: bold;">
+          ✔ ফুল ক্যাশ অন হোম ডেলিভারি <br>
+          <span style="color: red;">⏰ আজকের অফার সীমিত</span>
+        </p>
+
+        <a href="#order" class="btn-primary" style="margin-top: 5px; padding: 8px 15px; display: inline-block;">👉 এখনই
+          কম্বো অর্ডার করুন</a>
+      </div>
+    </div>
     <div class="container">
-      <h2 class="sec-title center-desktop">আমাদের প্রোডাক্ট সমূহ</h2>
       <div class="product-grid">
         <div class="product-card">
           <img src="images/p1.jpeg" alt="Product 1">
@@ -1763,105 +1817,68 @@
           <p class="price">১৫০০ টাকা</p>
           <a href="#order" class="btn-primary">অর্ডার করুন</a>
         </div>
-        <div class="product-card">
-          <!-- ডিসকাউন্ট ব্যানার (Top Center Positioning) -->
-          <div class="ribbon-card-overlay">
-            <div class="ribbon-wrapper">
-              <div class="ribbon-fold-top"></div>
-              <div class="ribbon-main">
-                <span class="ribbon-text-discount">DISCOUNT</span>
-                <div class="ribbon-number-group">
-                  <span class="ribbon-number">20</span>
-                  <span class="ribbon-percent">%</span>
-                </div>
-                <div class="ribbon-off-tag">
-                  <span>OFF</span>
-                </div>
-              </div>
-              <!-- সাইড মার্কস -->
-              <div class="ribbon-accents left">
-                <div class="acc-line"></div>
-                <div class="acc-line long"></div>
-                <div class="acc-line"></div>
-              </div>
-              <div class="ribbon-accents right">
-                <div class="acc-line"></div>
-                <div class="acc-line long"></div>
-                <div class="acc-line"></div>
-              </div>
-            </div>
-          </div>
+  </section>
 
-          <!-- প্রোডাক্ট ইমেজ ও রিটেইল -->
-          <img src="images/p3.jpeg" alt="Combo">
-          <div class="card-content">
-            <h2>কম্বো নিন</h2>
-            <h3>Combo Pack (Best) টাইট + ভরাট দুইটাই ২০% ছাড়</h3>
-            <p class="old-price">৩০০০ টাকা</p>
-            <p class="price">২৪০০ টাকা</p>
-            <p class="promo-text">কম্বো কিনলে ২০% ডিসকাউন্টে ৩০০০ টাকার প্রোডাক্ট ২৪০০ টাকায় পাচ্ছেন</p>
-            <a href="#order" class="btn-primary">কম্বো অর্ডার করুন</a>
-          </div>
+
+  <section class="info-section">
+    <div class="info-container">
+      <!-- পরিমাণ -->
+      <div class="info-box">
+        <div class="icon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
+            </path>
+            <path d="m3.3 7 8.7 5 8.7-5"></path>
+            <path d="M12 22V12"></path>
+          </svg>
         </div>
-        <section class="info-section">
-          <div class="info-container">
-            <!-- পরিমাণ -->
-            <div class="info-box">
-              <div class="icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z">
-                  </path>
-                  <path d="m3.3 7 8.7 5 8.7-5"></path>
-                  <path d="M12 22V12"></path>
-                </svg>
-              </div>
-              <span class="label">পরিমাণ</span>
-              <p class="value">125 ml</p>
-            </div>
+        <span class="label">পরিমাণ</span>
+        <p class="value">125 ml</p>
+      </div>
 
-            <!-- মেয়াদ -->
-            <div class="info-box">
-              <div class="icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
-                  <line x1="16" x2="16" y1="2" y2="6"></line>
-                  <line x1="8" x2="8" y1="2" y2="6"></line>
-                  <line x1="3" x2="21" y1="10" y2="10"></line>
-                </svg>
-              </div>
-              <span class="label">মেয়াদ</span>
-              <p class="value">খোলার পর ৯ মাস</p>
-            </div>
+      <!-- মেয়াদ -->
+      <div class="info-box">
+        <div class="icon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+            <line x1="16" x2="16" y1="2" y2="6"></line>
+            <line x1="8" x2="8" y1="2" y2="6"></line>
+            <line x1="3" x2="21" y1="10" y2="10"></line>
+          </svg>
+        </div>
+        <span class="label">মেয়াদ</span>
+        <p class="value">খোলার পর ৯ মাস</p>
+      </div>
 
-            <!-- বয়স -->
-            <div class="info-box">
-              <div class="icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-              </div>
-              <span class="label">ব্যবহারকারী</span>
-              <p class="value">১৮–৫০ বছর</p>
-            </div>
+      <!-- বয়স -->
+      <div class="info-box">
+        <div class="icon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <span class="label">ব্যবহারকারী</span>
+        <p class="value">১৮–৫০ বছর</p>
+      </div>
 
-            <!-- ব্যবহারকাল -->
-            <div class="info-box">
-              <div class="icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
-                </svg>
-              </div>
-              <span class="label">ব্যবহারকাল</span>
-              <p class="value">প্রায় ২৫–৩০ দিন</p>
-            </div>
-          </div>
-        </section>
+      <!-- ব্যবহারকাল -->
+      <div class="info-box">
+        <div class="icon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+          </svg>
+        </div>
+        <span class="label">ব্যবহারকাল</span>
+        <p class="value">প্রায় ২৫–৩০ দিন</p>
+      </div>
+    </div>
+
   </section>
 
   <!-- INGREDIENTS SECTION -->
