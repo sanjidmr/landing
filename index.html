@@ -2084,43 +2084,43 @@
 
       <div class="order-form-container">
         <form class="premium-form" action="https://formspree.io/f/xlgakyyg" method="POST">
-          <h3 class=" form-heading">অর্ডার কনফার্ম করতে ফর্মটি পূরণ করুন</h3>
+
+          <h3 class="form-heading">অর্ডার কনফার্ম করতে ফর্মটি পূরণ করুন</h3>
 
           <div class="input-group">
-            <input type="text" placeholder="আপনার নাম লিখুন" required>
+            <input type="text" name="name" placeholder="আপনার নাম লিখুন" required>
           </div>
 
           <div class="input-group">
-            <input type="tel" placeholder="আপনার মোবাইল নাম্বার" required>
+            <input type="tel" name="phone" placeholder="আপনার মোবাইল নাম্বার" required>
           </div>
 
           <div class="input-group">
-            <input type="text" placeholder="শহর (যেমন: ঢাকা)" required>
+            <input type="text" name="city" placeholder="শহর (যেমন: ঢাকা)" required>
           </div>
 
           <div class="input-group">
-            <textarea placeholder="আপনার পূর্ণ ঠিকানা" rows="2" required></textarea>
+            <textarea name="address" placeholder="আপনার পূর্ণ ঠিকানা" rows="2" required></textarea>
           </div>
 
           <div class="form-row">
             <div class="input-group">
               <label>পণ্য সিলেক্ট করুন</label>
-              <select>
-                <option value="1">Tightening Cream - ১৫০০ টাকা</option>
-                <option value="2">Enlargement Cream - ১৫০০ টাকা</option>
-                <option value="3">কম্বো প্যাক - ২৪০০ টাকা</option>
-
+              <select name="product">
+                <option value="Tightening Cream">Tightening Cream - ১৫০০ টাকা</option>
+                <option value="Enlargement Cream">Enlargement Cream - ১৫০০ টাকা</option>
+                <option value="Combo Pack">কম্বো প্যাক - ২৪০০ টাকা</option>
               </select>
             </div>
 
             <div class="input-group" style="flex: 0 0 100px;">
               <label>পরিমাণ</label>
-              <select>
-                <option>১</option>
-                <option>২</option>
-                <option>৩</option>
-                <option>৪</option>
-                <option>৫</option>
+              <select name="quantity">
+                <option value="1">১</option>
+                <option value="2">২</option>
+                <option value="3">৩</option>
+                <option value="4">৪</option>
+                <option value="5">৫</option>
               </select>
             </div>
           </div>
@@ -2129,9 +2129,6 @@
             🛒 অর্ডার কনফার্ম করুন
           </button>
 
-          <div class="stock-badge-container">
-            <span class="stock-badge">⚡ আজই অর্ডার করুন—সীমিত স্টক উপলব্ধ!</span>
-          </div>
         </form>
       </div>
     </div>
