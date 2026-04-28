@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>অর্ডার কনফার্ম হয়েছে | DERMA HOUSE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose: #c8426a;
+      --rose-light: #e8708f;
+      --rose-pale: #f9e8ef;
+      --rose-blush: #fdf3f6;
+      --gold: #c9a96e;
+      --gold-light: #e8d5b0;
+      --cream: #fefaf8;
+      --ivory: #fffbf9;
+      --charcoal: #2a1e26;
+      --muted: #7a5c6a;
+      --border: rgba(200, 66, 106, 0.12);
+      --shadow-rose: 0 20px 60px rgba(200, 66, 106, 0.18);
+      --shadow-soft: 0 8px 40px rgba(42, 30, 38, 0.08);
+      --font-sans: 'Hind Siliguri', sans-serif;
+      --font-serif: 'Cormorant Garamond', serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--ivory);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Background decorations */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(200,66,106,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -200px; left: -200px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* Floating petals */
+    .petal {
+      position: fixed;
+      font-size: 1.2rem;
+      opacity: 0;
+      animation: floatPetal linear infinite;
+      pointer-events: none;
+    }
+    .petal:nth-child(1)  { left: 10%; animation-delay: 0s;   animation-duration: 6s; font-size: 1rem; }
+    .petal:nth-child(2)  { left: 25%; animation-delay: 1s;   animation-duration: 8s; font-size: 1.4rem; }
+    .petal:nth-child(3)  { left: 40%; animation-delay: 2s;   animation-duration: 7s; }
+    .petal:nth-child(4)  { left: 60%; animation-delay: 0.5s; animation-duration: 9s; font-size: 0.9rem; }
+    .petal:nth-child(5)  { left: 75%; animation-delay: 1.5s; animation-duration: 6.5s; }
+    .petal:nth-child(6)  { left: 88%; animation-delay: 3s;   animation-duration: 7.5s; font-size: 1.1rem; }
+
+    @keyframes floatPetal {
+      0%   { top: 110%; opacity: 0; transform: rotate(0deg) translateX(0); }
+      10%  { opacity: 0.6; }
+      90%  { opacity: 0.4; }
+      100% { top: -10%; opacity: 0; transform: rotate(360deg) translateX(30px); }
+    }
+
+    /* Main card */
+    .card {
+      background: white;
+      border-radius: 28px;
+      padding: 56px 48px;
+      max-width: 520px;
+      width: 90%;
+      text-align: center;
+      box-shadow: var(--shadow-rose), 0 2px 0 rgba(200,66,106,0.08);
+      border: 1px solid var(--border);
+      position: relative;
+      z-index: 10;
+      animation: cardIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+    }
+
+    @keyframes cardIn {
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Top ornament */
+    .ornament {
+      font-family: var(--font-serif);
+      color: var(--gold);
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.5s forwards;
+    }
+
+    /* Success icon */
+    .success-ring {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--rose-pale), var(--rose-blush));
+      border: 2px solid rgba(200,66,106,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      position: relative;
+      opacity: 0;
+      animation: ringIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s forwards;
+    }
+
+    .success-ring::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(200,66,106,0.12);
+    }
+
+    .success-ring::after {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border-radius: 50%;
+      border: 1px dashed rgba(200,66,106,0.08);
+      animation: spinSlow 12s linear infinite;
+    }
+
+    @keyframes spinSlow { to { transform: rotate(360deg); } }
+
+    @keyframes ringIn {
+      to { opacity: 1; transform: scale(1); }
+      from { transform: scale(0.5); }
+    }
+
+    .check-icon {
+      font-size: 2.8rem;
+      animation: checkBounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s both;
+    }
+
+    @keyframes checkBounce {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    /* Heading */
+    .main-title {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      line-height: 1.2;
+      margin-bottom: 8px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.7s forwards;
+    }
+
+    .main-subtitle {
+      font-size: 1rem;
+      color: var(--rose);
+      font-weight: 500;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.8s forwards;
+    }
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 28px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.9s forwards;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+    }
+    .divider-icon { color: var(--gold); font-size: 0.8rem; letter-spacing: 4px; }
+
+    /* Steps */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 16px;
+      background: var(--rose-blush);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+
+    .step:nth-child(1) { animation: slideIn 0.5s ease 1.0s forwards; }
+    .step:nth-child(2) { animation: slideIn 0.5s ease 1.15s forwards; }
+    .step:nth-child(3) { animation: slideIn 0.5s ease 1.3s forwards; }
+
+    @keyframes slideIn {
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--rose), var(--rose-light));
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-text strong {
+      display: block;
+      color: var(--charcoal);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .step-text span {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    /* CTA button */
+    .back-btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: linear-gradient(135deg, var(--rose), var(--rose-light));
+      color: white;
+      border-radius: 50px;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(200,66,106,0.3);
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 1.5s forwards;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(200,66,106,0.4);
+    }
+
+    /* Brand footer */
+    .brand-footer {
+      margin-top: 28px;
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--gold);
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 1.6s forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 40px 24px; }
+      .main-title { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating petals -->
+  <div class="petal">🌸</div>
+  <div class="petal">✿</div>
+  <div class="petal">🌸</div>
+  <div class="petal">✿</div>
+  <div class="petal">🌸</div>
+  <div class="petal">✿</div>
+
+  <div class="card">
+
+    <div class="ornament">✦ DERMA HOUSE ✦</div>
+
+    <div class="success-ring">
+      <span class="check-icon">✅</span>
+    </div>
+
+    <h1 class="main-title">অর্ডার কনফার্ম হয়েছে!</h1>
+    <p class="main-subtitle">আপনার অর্ডার সফলভাবে গৃহীত হয়েছে 🎉</p>
+
+    <div class="divider">
+      <span class="divider-icon">✦ ✦ ✦</span>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">১</div>
+        <div class="step-text">
+          <strong>কল কনফার্মেশন</strong>
+          <span>আমরা ২৪ ঘণ্টার মধ্যে আপনাকে ফোন করে অর্ডার কনফার্ম করব।</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">২</div>
+        <div class="step-text">
+          <strong>পণ্য প্যাক ও প্রেরণ</strong>
+          <span>কনফার্মের পর ৩–৫ কার্যদিবসের মধ্যে কুরিয়ারে পাঠানো হবে।</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">৩</div>
+        <div class="step-text">
+          <strong>ক্যাশ অন ডেলিভারি</strong>
+          <span>পণ্য হাতে পেয়ে পেমেন্ট করুন — কোনো আগাম টাকা নেই।</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html" class="back-btn">← হোমপেজে ফিরে যান</a>
+
+    <div class="brand-footer">Korean Skincare • Authentic & Original</div>
+
+  </div>
+
+</body>
+</html>
