@@ -21,7 +21,6 @@
       'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '2023381691581567');
     fbq('track', 'PageView');
-    fbq('track', 'ViewContent');
   </script>
   <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=2023381691581567&ev=PageView&noscript=1" /></noscript>
@@ -1728,6 +1727,18 @@
     </div>
   </section>
 
+  <!-- হিরো সেকশনের শেষে, body ট্যাগের আগে -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fbq('track', 'ViewContent', {
+        content_name: 'Korean Breast Cream',
+        content_category: 'Beauty',
+        value: 1250,
+        currency: 'BDT'
+      });
+    });
+  </script>
+
   <!-- PROBLEM SECTION -->
   <section style="background: white;">
     <div class="container">
@@ -1811,23 +1822,24 @@
   </section>
 
   <!-- PRODUCT SECTION -->
+  
   <section style="background: white;">
     <h2 class="sec-title center-desktop">আমাদের প্রোডাক্ট সমূহ</h2>
 
     <div class="product-card">
       <!-- ডিসকাউন্ট ব্যানার (Top Center Positioning) -->
 
-      <div>
-        <button class="order-btn-3d  pink-gradient">
-          <!-- <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+
+      <button class="order-btn-3d  pink-gradient">
+        <!-- <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round"> -->
-          <!-- <circle cx="8" cy="21" r="1" />
+        <!-- <circle cx="8" cy="21" r="1" />
               <circle cx="19" cy="21" r="1" /> -->
-          <!-- <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" /> -->
-          </svg>
-          20% discount
-        </button>
-      </div>
+        <!-- <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" /> -->
+        </svg>
+        20% discount
+      </button>
+
       <img src="images/p3.jpeg" alt="Combo Pack" style="margin-bottom: 5px;">
       <!-- <div class="card-content" style="padding: 10px;"> -->
       <h2 style="margin: 0; font-size: 20px;">কম্বো প্যাক</h2>
