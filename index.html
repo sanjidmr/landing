@@ -21,9 +21,14 @@
       'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '2023381691581567');
     fbq('track', 'PageView');
+    fbq('track', 'ViewContent', {
+      content_name: 'Korean Breast Cream',
+      content_category: 'Beauty',
+      value: 1250,
+      currency: 'BDT'
+    });
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=2023381691581567&ev=PageView&noscript=1" /></noscript>
+
 
   <!-- Fonts -->
   <link
@@ -1660,6 +1665,8 @@
 </head>
 
 <body>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2023381691581567&ev=PageView&noscript=1" /></noscript>
 
   <!-- TOP BAR -->
   <div class="topbar">
@@ -1728,16 +1735,7 @@
   </section>
 
   <!-- হিরো সেকশনের শেষে, body ট্যাগের আগে -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      fbq('track', 'ViewContent', {
-        content_name: 'Korean Breast Cream',
-        content_category: 'Beauty',
-        value: 1250,
-        currency: 'BDT'
-      });
-    });
-  </script>
+
 
   <!-- PROBLEM SECTION -->
   <section style="background: white;">
@@ -1822,7 +1820,7 @@
   </section>
 
   <!-- PRODUCT SECTION -->
-  
+
   <section style="background: white;">
     <h2 class="sec-title center-desktop">আমাদের প্রোডাক্ট সমূহ</h2>
 
@@ -2150,6 +2148,12 @@
       });
 
       // Meta Pixel: Lead (Form Submit)
+
+
+      fbq('track', 'Purchase', {
+        value: 1250,
+        currency: 'BDT'
+      });
       fbq('track', 'Lead');
 
       window.location.href = 'https://koreanfulmula.netlify.app/thanks.html';
